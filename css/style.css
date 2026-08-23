@@ -636,7 +636,7 @@ main {
   }
   .category__card:hover .category__title, .category__card:active .category__title {
     opacity: 1;
-    transform: translate(50%, 50%);
+    transform: translate(-50%, -50%);
   }
   .category__info {
     position: absolute;
@@ -2710,7 +2710,7 @@ main {
   text-transform: uppercase;
 }
 .footer p {
-  margin-top: -10px;
+  margin-top: 10px;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   color: #8e8c89;
@@ -2726,7 +2726,7 @@ main {
 .email {
   width: 250px;
   padding: 10px 20px;
-  margin-bottom: 20px;
+  margin-top: 20px;
   font-family: "Inter", sans-serif;
   font-size: 10px;
   background: transparent;
@@ -2734,11 +2734,19 @@ main {
   border-radius: 30px;
 }
 
+.line {
+  border: 1px solid #fff;
+  margin-block: 30px;
+}
+
 hr {
   margin: 20px;
 }
 
 @media (min-width: 1200px) {
+  .footer__about-us {
+    max-width: 500px;
+  }
   .footer__header {
     display: flex;
     flex-direction: row;
@@ -2755,7 +2763,7 @@ hr {
   .footer p {
     margin-top: 20px;
     font-family: "Inter", sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     color: #8e8c89;
   }
   .footer__secondinfo {
@@ -2763,7 +2771,7 @@ hr {
     margin-left: 50px;
     margin-top: 100px;
     font-family: "Inter", sans-serif;
-    font-size: 13px;
+    font-size: 10px;
     color: #8e8c89;
   }
   .email {
@@ -2775,8 +2783,5 @@ hr {
     background: transparent;
     border: 1px solid #ffffff;
     border-radius: 30px;
-  }
-  hr {
-    margin: 50px;
   }
 }/*# sourceMappingURL=style.css.map */
