@@ -1133,7 +1133,7 @@ main {
   }
   .athlete-header__name h3 {
     font-size: clamp(2.5rem, 12.5vw, 10.375rem);
-    text-align: left;
+    text-align: center;
     white-space: nowrap;
   }
   .athlete-stats {
