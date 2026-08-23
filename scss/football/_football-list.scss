@@ -21,13 +21,13 @@
 
         gap: 30px;
 
-        padding: 100px;
+        padding: 50px;
     }
 
     .legends__card {
         position: relative;
         overflow: hidden;
-        border-radius: 50px;
+        border-radius: 63px;
 
         img {
             display: block;
@@ -65,7 +65,7 @@
             h3 {
                 font-family: $font-header-text;
                 text-transform: uppercase;
-                font-size: 1rem;
+                font-size: 1.5rem;
                 margin: 0;
             }
 

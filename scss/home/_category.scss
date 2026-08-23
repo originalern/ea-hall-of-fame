@@ -10,6 +10,15 @@
     text-transform: uppercase;
   }
 
+  &__about {
+    p {
+      text-align: center;
+      font-family: $font-text;
+      font-size: 15px;
+      color: $color-text;
+    }       
+  }
+
   .container {
     display: flex;
     flex-direction: column;
@@ -69,10 +78,9 @@
     bottom: 20px;
     left: 50%;
 
-    // font-family: $font-title;
+    font-family: $font-category;
     font-size: clamp(28px, 6vw, 45px);
     letter-spacing: 5px;
-    text-transform: uppercase;
     white-space: nowrap;
 
     
@@ -146,7 +154,7 @@
 
       .category__title {
         opacity: 1;
-        transform: translate(-50%, -150%);
+        transform: translate(50%, 50%);
       }
     }
   }
@@ -173,10 +181,9 @@
     bottom: 20px;
     left: 50%;
 
-    font-family: $font-title;
+    font-family: $font-category;
     font-size: clamp(28px, 6vw, 100px);
     letter-spacing: 5px;
-    text-transform: uppercase;
     white-space: nowrap;
 
     /* Изначально текст скрыт и смещен чуть ниже */

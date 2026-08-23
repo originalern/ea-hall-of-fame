@@ -7,6 +7,8 @@
     justify-content: center;
     gap: 100px;
     text-align: center;
+
+    margin-top: 200px;
   }
 
   &__card {
@@ -60,9 +62,12 @@
   &__title {
     font-family: $font-head-title;
     font-size: clamp(36px, 8vw, 128px);
-    letter-spacing: 0.13em;
+    letter-spacing: 0.10em;
   }
+  
 }
+
+
 
 /* Вспомогательный слой градиента */
 .layer-gradient {

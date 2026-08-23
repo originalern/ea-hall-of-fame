@@ -55,6 +55,13 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Monplesir script";
+  src: url("../../assets/font/Monplesir-script.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 *,
 *::before,
 *::after {
@@ -200,7 +207,7 @@ main {
   width: 100%;
   max-width: 1200px;
   margin-inline: auto;
-  padding-inline: 40px;
+  padding-inline: 20px;
 }
 
 .header {
@@ -376,6 +383,7 @@ main {
   justify-content: center;
   gap: 100px;
   text-align: center;
+  margin-top: 200px;
 }
 .intro__card {
   position: relative;
@@ -418,7 +426,7 @@ main {
 .intro__title {
   font-family: "Alumni Sans", sans-serif;
   font-size: clamp(36px, 8vw, 128px);
-  letter-spacing: 0.13em;
+  letter-spacing: 0.1em;
 }
 
 /* Вспомогательный слой градиента */
@@ -518,6 +526,12 @@ main {
   font-size: clamp(2.5rem, 0.502rem + 8.52vw, 10.625rem);
   text-transform: uppercase;
 }
+.category__about p {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  color: #8e8c89;
+}
 .category .container {
   display: flex;
   flex-direction: column;
@@ -563,9 +577,9 @@ main {
   position: absolute;
   bottom: 20px;
   left: 50%;
+  font-family: "Monplesir script", sans-serif;
   font-size: clamp(28px, 6vw, 45px);
   letter-spacing: 5px;
-  text-transform: uppercase;
   white-space: nowrap;
   opacity: 1;
   transform: translate(-50%, 0);
@@ -622,7 +636,7 @@ main {
   }
   .category__card:hover .category__title, .category__card:active .category__title {
     opacity: 1;
-    transform: translate(-50%, -150%);
+    transform: translate(50%, 50%);
   }
   .category__info {
     position: absolute;
@@ -641,10 +655,9 @@ main {
     position: absolute;
     bottom: 20px;
     left: 50%;
-    font-family: "Golos Text", sans-serif;
+    font-family: "Monplesir script", sans-serif;
     font-size: clamp(28px, 6vw, 100px);
     letter-spacing: 5px;
-    text-transform: uppercase;
     white-space: nowrap;
     /* Изначально текст скрыт и смещен чуть ниже */
     opacity: 0;
@@ -680,7 +693,7 @@ main {
   width: 100%;
   max-width: 500px;
   overflow: hidden;
-  border-radius: 45px;
+  border-radius: 65px;
 }
 .candidates__card img {
   display: block;
@@ -1650,12 +1663,6 @@ main {
   letter-spacing: 0.1em;
   text-align: center;
 }
-.bio__container {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  width: 100%;
-}
 .bio__intro {
   width: 100%;
 }
@@ -1832,13 +1839,13 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
-  padding: 100px;
+  padding: 50px;
 }
 
 .legends__card {
   position: relative;
   overflow: hidden;
-  border-radius: 50px;
+  border-radius: 63px;
 }
 .legends__card img {
   display: block;
@@ -1866,7 +1873,7 @@ main {
 .legends__card .legends__info h3 {
   font-family: "Roboto Condensed", sans-serif;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin: 0;
 }
 .legends__card .legends__info p {
