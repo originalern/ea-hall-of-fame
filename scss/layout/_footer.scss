@@ -1,0 +1,101 @@
+@use "../base/variables" as *;
+ .footer {
+    &__header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 20px;
+      padding: 10px;
+      margin: 25px;
+    }
+
+    h3 {
+      font-family: $font-header-text;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-top: -10px;
+      font-family: $font-text;
+      font-size: 10px;
+      color: $color-text;
+    }
+
+    &__secondinfo {
+        padding: 30px;
+        padding-bottom: 30px;
+
+        font-family: $font-text;
+        font-size: 13px;
+        color: $color-text;
+    }
+  }
+
+  .email {
+    width: 250px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+
+    font-family: $font-text;
+    font-size: 10px;
+
+    background: transparent;
+    border: 1px solid $color-light;
+    border-radius: 30px;
+  }
+
+  hr {
+    margin: 20px;
+  }
+
+@media (min-width: 1200px) {
+  .footer {
+    &__header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 50px;
+      padding: 30px;
+      margin: 50px;
+    }
+
+    h3 {
+      font-family: $font-header-text;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    p {
+      margin-top: 20px;
+      font-family: $font-text;
+      font-size: 13px;
+      color: $color-text;
+    }
+
+    &__secondinfo {
+      margin-bottom: 150px;
+      margin-left: 50px;
+      margin-top: 100px;
+      font-family: $font-text;
+      font-size: 13px;
+      color: $color-text;
+    }
+  }
+
+  .email {
+    width: 250px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+
+    font-family: $font-text;
+    font-size: 10px;
+
+    background: transparent;
+    border: 1px solid $color-light;
+    border-radius: 30px;
+  }
+
+  hr {
+    margin: 50px;
+  }
+}

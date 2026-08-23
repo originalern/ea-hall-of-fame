@@ -1,0 +1,64 @@
+@use "../base/variables" as *;
+
+
+/* =========================
+   MOBILE FIRST
+========================= */
+
+.poster {
+    width: 100vw;
+
+    margin-bottom: 80px;
+    margin-left: calc(50% - 50vw);
+
+    .poster_quote {
+        position: relative;
+
+        width: 100%;
+
+        img {
+            display: block;
+
+            width: 100%;
+            height: auto;
+        }
+
+        .quote__title {
+            position: absolute;
+            inset: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding-inline: 20px;
+
+            font-family: $font-header-text;
+            font-size: clamp(1.3rem, 6vw, 2rem);
+            line-height: 1.2;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 1200px) {
+
+    .poster {
+        margin-bottom: 150px;
+
+        .poster_quote {
+
+            .quote__title {
+                padding-inline: 40px;
+
+                font-size: 3rem;
+            }
+        }
+    }
+}

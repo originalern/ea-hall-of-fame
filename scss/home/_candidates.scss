@@ -1,0 +1,211 @@
+@use "../base/variables" as *;
+
+/* =========================
+   MOBILE FIRST
+========================= */
+
+.candidates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 40px;
+    padding: 40px 20px;
+
+
+    .section__name {
+        font-family: $font-head-title;
+        font-size: clamp(2.5rem, 8vw, 5rem);
+
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+
+    &__cards {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 30px;
+    }
+
+
+    &__card {
+        position: relative;
+
+        width: 100%;
+        max-width: 500px;
+
+        overflow: hidden;
+
+        border-radius: 45px;
+
+
+        img {
+            display: block;
+
+            width: 100%;
+            height: auto;
+        }
+
+
+        &::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background: linear-gradient(
+                to top,
+                rgba(131, 101, 25, 0.9) 0%,
+                rgba(131, 101, 25, 0.4) 35%,
+                rgba(247, 200, 81, 0) 65%
+            );
+
+            pointer-events: none;
+        }
+
+
+        .candidates__info {
+            position: absolute;
+
+            left: 50%;
+            bottom: 10%;
+
+            transform: translateX(-50%);
+
+            z-index: 2;
+
+            width: 90%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            gap: 5px;
+
+            text-align: center;
+
+
+            h3 {
+                margin: 0;
+
+                font-family: $font-header-text;
+                font-size: clamp(1.1rem, 5vw, 1.5rem);
+
+                text-transform: uppercase;
+            }
+
+
+            p {
+                margin: 0;
+
+                font-family: $font-text;
+                font-size: clamp(.85rem, 3.5vw, 1rem);
+            }
+        }
+    }
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 1200px) {
+
+    .candidates {
+        gap: 50px;
+        padding: 60px;
+
+
+        .section__name {
+            font-size: clamp(
+                2.5rem,
+                0.502rem + 8.52vw,
+                10.625rem
+            );
+        }
+
+
+        &__cards {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            gap: 60px;
+        }
+
+
+        &__card {
+            max-width: none;
+
+            cursor: pointer;
+
+            border-radius: 104px;
+
+
+            img {
+                transition:
+                    filter $transition-duration,
+                    transform $transition-duration;
+            }
+
+
+            &::after {
+                background: linear-gradient(
+                    to top,
+                    rgba(118, 98, 47, 0.651) 0%,
+                    rgba(71, 58, 25, 0.241) 40%
+                );
+
+                opacity: 0;
+
+                transition: opacity $transition-duration;
+            }
+
+
+            &:hover img {
+                transform: scale(1.10);
+            }
+
+
+            &:hover::after {
+                opacity: 1;
+            }
+
+
+            &:hover .candidates__info {
+                opacity: 1;
+            }
+
+
+            .candidates__info {
+                inset: 0;
+
+                width: auto;
+
+                transform: none;
+
+                justify-content: center;
+
+                opacity: 0;
+
+                transition: opacity $transition-duration;
+
+
+                h3 {
+                    font-size: 2.5rem;
+                }
+
+
+                p {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

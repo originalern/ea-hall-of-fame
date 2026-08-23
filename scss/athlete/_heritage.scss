@@ -1,0 +1,209 @@
+@use "../base/variables" as *;
+
+
+/* =========================
+   MOBILE FIRST
+========================= */
+
+.heritage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 60px;
+
+    margin-top: 100px;
+    padding-inline: 20px;
+
+    text-align: center;
+
+
+    .section__title {
+        font-family: $font-head-title;
+        font-size: clamp(2.5rem, 8vw, 5rem);
+
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-align: center;
+    }
+
+
+    &__category {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        &-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            gap: 5px;
+
+
+            .section__subtitle {
+                font-family: $font-subtitle;
+                font-size: clamp(1.5rem, 6vw, 2.5rem);
+
+                text-transform: uppercase;
+                text-align: center;
+            }
+
+
+            p {
+                margin: 0;
+
+                font-family: $font-text;
+                font-size: 14px;
+                line-height: 1.6;
+
+                text-transform: uppercase;
+                text-align: center;
+            }
+        }
+    }
+
+
+    &__list {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+
+        gap: 15px;
+
+        margin-top: 30px;
+        padding: 0;
+
+        list-style: none;
+    }
+
+
+    &__item {
+        min-width: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 10px;
+
+
+        img {
+            display: block;
+
+            width: 100%;
+            max-width: 100px;
+            height: 100px;
+
+            object-fit: contain;
+        }
+
+
+        h4 {
+            margin: 0;
+
+            font-family: $font-subtitle;
+            font-size: 1.2rem;
+        }
+
+
+        p {
+            margin: 0;
+
+            font-family: $font-text;
+            font-size: 12px;
+            line-height: 1.5;
+
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 1200px) {
+
+    .heritage {
+        gap: 100px;
+
+        margin-top: 250px;
+        padding-inline: 50px;
+
+
+        .section__title {
+            font-size: clamp(
+                2.5rem,
+                0.502rem + 8.52vw,
+                10.625rem
+            );
+        }
+
+
+        &__category {
+
+            &-header {
+
+                .section__subtitle {
+                    font-size: clamp(
+                        1.5rem,
+                        0.5909rem + 4.5455vw,
+                        4rem
+                    );
+                }
+
+
+                p {
+                    font-size: 16px;
+                    line-height: 1.8;
+                }
+            }
+        }
+
+
+        &__list {
+            width: auto;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            gap: 50px;
+
+            margin-top: 50px;
+        }
+
+
+        &__item {
+            gap: 1rem;
+
+
+            img {
+                width: 100%;
+                max-width: none;
+                height: auto;
+            }
+
+
+            h4 {
+                font-size: 1.5rem;
+            }
+
+
+            p {
+                font-size: 16px;
+                line-height: 1.8;
+                text-align: left;
+            }
+        }
+    }
+}

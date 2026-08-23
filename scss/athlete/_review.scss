@@ -1,0 +1,276 @@
+@use "../base/variables" as *;
+
+
+/* =========================
+   MOBILE FIRST
+========================= */
+
+.review {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: 100px;
+    padding-inline: 20px;
+
+    text-align: center;
+
+
+    .section__title {
+        font-family: $font-head-title;
+        font-size: clamp(2.5rem, 8vw, 5rem);
+
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-align: center;
+    }
+
+
+    /* =========================
+       ФОТО
+    ========================= */
+
+    &__media {
+        position: relative;
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding: 20px 0;
+
+
+        img {
+            display: block;
+
+            width: 100%;
+            height: auto;
+        }
+
+
+        &::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background: linear-gradient(
+                to top,
+                rgb(14, 14, 14) 5%,
+                rgba(14, 14, 14, 0.7) 25%,
+                rgba(14, 14, 14, 0) 55%
+            );
+
+            z-index: 1;
+
+            pointer-events: none;
+        }
+    }
+
+
+    /* =========================
+       BADGES
+    ========================= */
+
+    &__badges {
+        position: relative;
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        gap: 15px;
+
+        margin-top: -50px;
+
+        z-index: 2;
+
+
+        img {
+            display: block;
+
+            width: 100%;
+            max-width: 120px;
+            height: auto;
+        }
+    }
+
+
+    /* =========================
+       ХАРАКТЕРИСТИКИ
+    ========================= */
+
+    &__specs {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        margin-top: 50px;
+
+        z-index: 2;
+    }
+
+
+    &__spec-item {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        gap: 10px;
+
+
+        h3 {
+            width: 100%;
+
+            margin: 0;
+            padding: 10px 20px;
+
+            background-color: #b38432;
+
+            border-radius: 30px;
+
+            font-family: $font-subtitle;
+            font-size: clamp(1.3rem, 6vw, 2rem);
+
+            text-transform: uppercase;
+        }
+
+
+        p {
+            margin: 0;
+
+            font-family: $font-stat;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 768px) {
+
+    .review {
+
+        &__badges {
+
+            img {
+                max-width: 180px;
+            }
+        }
+
+
+        &__specs {
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+    }
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 1200px) {
+
+    .review {
+        margin-top: 250px;
+
+        padding-inline: 50px;
+
+
+        .section__title {
+            font-size: clamp(
+                2.5rem,
+                0.502rem + 8.52vw,
+                10.625rem
+            );
+        }
+
+
+        &__media {
+            padding: 50px;
+
+
+            &::after {
+                background: linear-gradient(
+                    to top,
+                    rgb(14, 14, 14) 15%,
+                    rgba(14, 14, 14, 0.6) 30%,
+                    rgba(14, 14, 14, 0) 45%
+                );
+            }
+        }
+
+
+        &__badges {
+            position: absolute;
+
+            max-width: 1200px;
+
+            margin-top: 350px;
+
+            transform: translateY(100%);
+
+
+            img {
+                max-width: none;
+            }
+        }
+
+
+        &__specs {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            gap: 20px;
+
+            width: 100%;
+            max-width: 1500px;
+
+            margin-top: 450px;
+        }
+
+
+        &__spec-item {
+            gap: 20px;
+
+
+            h3 {
+                width: 300px;
+
+                padding: 0;
+
+                border-radius: 50px;
+
+                font-size: 40px;
+            }
+
+
+            p {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

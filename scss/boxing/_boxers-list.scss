@@ -1,0 +1,184 @@
+@use "../base/variables" as *; 
+
+    .hero__container {
+
+        h2 {
+            font-family: $font-head-title;
+            text-transform: uppercase;
+            font-size: clamp(2.5rem, 0.502rem + 8.52vw, 10.625rem);            
+        }
+
+        p {
+            font-family: $font-text;
+            font-size: 15px;
+            color: $color-text;
+        }
+    }
+
+    .legends__cards {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 40px;
+    }
+
+    .legends__card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 100px;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+
+            
+                background: linear-gradient(
+                    to top,
+                    rgba(69, 58, 28, 0.877) 0%,
+                    rgba(71, 58, 25, 0.241) 30%
+                );   
+            
+            inset: 0;
+            z-index: 1;
+        }
+
+        .legends__info {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            left: 0;
+            right: 0;
+            bottom: 40px;
+
+            z-index: 2;
+            
+            h3 {
+                font-family: $font-header-text;
+                text-transform: uppercase;
+                font-size: 22px;
+                margin: 0;
+            }
+
+            p {
+                font-family: $font-text;
+                font-size: 16px;
+                margin: 0;                
+            }
+        }
+    }
+
+@media (min-width: 1200px) {
+
+    .hero__container {
+
+        h2 {
+            font-family: $font-head-title;
+            text-transform: uppercase;
+            font-size: clamp(2.5rem, 0.502rem + 8.52vw, 10.625rem);            
+        }
+
+        p {
+            text-align: center;
+            font-family: $font-text;
+            font-size: 20px;
+            color: $color-text;
+        }
+    }
+
+    .legends__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 20px;
+        
+        column-gap: 60px;
+        justify-content: center;
+
+        padding: 50px;
+    }
+
+    .legends__card {
+        position: relative;
+        overflow: hidden;
+
+        border-radius: 104px;
+        cursor: pointer;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+
+            transition: transform $transition-duration;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background: linear-gradient(
+                to top,
+                rgba(118, 98, 47, 0.651) 0%,
+                rgba(71, 58, 25, 0.157) 30%
+            );
+
+        opacity: 0;
+        transition: opacity $transition-duration;
+        }
+
+        &:hover img {
+            transform: scale(1.1);
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+
+        &:hover .legends__info {
+            opacity: 1;
+        }
+
+        .legends__info {
+            position: absolute;
+
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; 
+            align-items: center;     
+            text-align: center;  
+
+            inset: 0;
+
+            opacity: 0;
+            transition: opacity $transition-duration;
+            z-index: 2;
+
+            padding: 50px;
+
+            h3 {
+                font-family: $font-header-text;
+                text-transform: uppercase;
+                font-size: 2.3rem;
+                margin: 0;
+            }
+
+            p {
+                font-family: $font-text;
+                font-size: 15px;
+            }
+        }
+
+    }
+
+}

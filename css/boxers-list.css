@@ -1,0 +1,627 @@
+@font-face {
+    font-family: "Cormorant-garamond";
+    src: url(../assets/font/CormorantGaramond-Light.woff2) format(woff2);
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "GolosText";
+    src: url(../assets/font/GolosText-ExtraBold.woff2) format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "RobotoMono";
+    src: url(../assets/font/RobotoMono-Regular.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(../assets/font/Inter_18pt-Regular.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: "RobotoC-regular";
+  src: url(../assets/font/Roboto-Condensed-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AlumniSans";
+  src: url(../assets/font/AlumniSans-Light.woff2) format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MarcellusSC";
+  src: url(../assets/font/MarcellusSC-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/**
+  Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure, fieldset):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl
+):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/**
+  Упрощаем работу с изображениями и видео
+ */
+img,
+video {
+  display: block;
+  height: auto;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+  /**
+    Убираем скачок интерфейса по горизонтали
+    при появлении / исчезновении скроллбара
+   */
+  scrollbar-gutter: stable;
+  /**
+    Плавный скролл
+   */
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
+  line-height: 1.5;
+}
+
+/**
+  Нормализация высоты элемента ссылки при его инспектировании в DevTools
+ */
+a:where([class]) {
+  display: inline-flex;
+}
+
+/**
+  Курсор-рука при наведении на элемент
+ */
+button,
+label {
+  cursor: pointer;
+}
+
+/**
+  Убирает серую подсветку при тапе на мобильных устройствах (iOS/Android)
+ */
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут fill со значением 'none' или начинается с 'url')
+ */
+:where([fill]:not(
+  [fill="none"],
+  [fill^="url"]
+)) {
+  fill: currentColor;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут stroke со значением 'none')
+ */
+:where([stroke]:not(
+  [stroke="none"],
+  [stroke^="url"]
+)) {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Приведение рамок таблиц в классический 'collapse' вид
+ */
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+.logo-icon,
+.logo-icon rect {
+    fill: transparent !important; 
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+    font-weight: normal; /* Сбрасываем жирность браузера по умолчанию */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+
+}
+
+:root {
+    --color-ligt: #FFFFFF;
+    --color-dark: #0E0E0E;
+    --color-yellow: #FFDB78;
+    --color-text: #B2B2B2;
+    
+    --font-family-logo: "Cormorant-garamond", sans-serif;
+    --font-family-head-title: "AlumniSans", sans-serif;
+    --font-family-title: "GolosText", sans-serif;
+    --font-family-subtitle: "RobotoMono", sans-serif;
+    --font-family-name: "MarcellusSC", sans-serif;
+    --font-family-text: "Inter", sans-serif;
+    --font-family-header-text: "RobotoC-regular", sans-serif;
+
+    --font-size-head-title: 5.0vw;
+    --font-size-title: 4.0vw;
+    --font-size-text: 3.0vw;
+
+    --header-height: 150px;
+    --header-height-mob: 50px;
+    --transition-duration: 0.5s;
+
+}
+
+body{
+    background:var(--color-dark);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+.container {
+    width:min(100% - 32px,390px);
+    margin-inline:auto;
+}
+
+
+
+/*  HEADER  */
+
+.header{
+    padding:18px 0;
+}
+
+.header__container {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.header-logo-image{
+    width:110px;
+    height:auto;
+}
+
+.header__nav{
+    width:28px;
+    cursor:pointer;
+}
+
+.header__nav div{
+    height:2px;
+    background:white;
+    margin:6px 0;
+    transition:.3s;
+}
+
+.change .line-1{
+    transform:rotate(-45deg) translate(-6px,6px);
+}
+
+.change .line-2{
+    opacity:0;
+}
+
+.change .line-3{
+    transform:rotate(45deg) translate(-5px,-6px);
+}
+
+.header__list{
+    position:absolute;
+    right:20px;
+    top:70px;
+
+    display:none;
+    flex-direction:column;
+    gap:18px;
+
+    background:#151515;
+    padding:25px;
+    border-radius:12px;
+}
+
+.header__list.active{
+    display:flex;
+}
+
+.header-menu__link{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+}
+
+/*  HERO  */
+
+.hero__section{
+    padding-top:50px;
+    text-align:center;
+}
+
+.hero__title{
+    font-family: var(--font-family-head-title);
+    font-size:48px;
+    font-weight:400;
+    margin-bottom:4px;
+    text-transform: uppercase;
+}
+
+.hero__about{
+
+    max-width:330px;
+    margin:auto;
+}
+
+.hero__about p{
+    font-family: var(--font-family-header-text);
+    font-size:13px;
+    line-height:1.55;
+    color:var(--color-ligt);
+
+}
+
+
+/* ===========================
+      DESKTOP 1200+
+=========================== */
+
+@media (min-width:1200px){
+
+.container{
+    width:min(100% - 80px, 1400px);
+    margin-inline:auto;
+}
+
+.main__container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/*  HEADER  */
+
+.header{
+    padding:30px 0;
+}
+
+.header-logo-image{
+    width:220px;
+}
+
+.header__nav{
+    display:none;
+}
+
+.header__list{
+    position:static;
+    display:flex;
+    flex-direction:row;
+    gap:60px;
+    padding:0;
+    background:transparent;
+}
+
+.header-menu__link{
+    font-size:18px;
+    transition:.3s;
+    text-transform: uppercase;
+}
+
+.header-menu__link:hover{
+    color:#c6a86a;
+}
+
+/*  HERO  */
+
+.hero__section{
+    min-height:900px;
+    display:flex;
+    align-items:center;
+}
+
+.hero__container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.hero__title{
+    font-size:200px;
+}
+.hero__about{
+  max-width: 1200px;
+}
+.hero__about p{
+    font-family: var(--font-family-text);
+    font-size: 23px;
+}
+
+/* legends */
+
+.legends__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.legends__cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 90px 170px 90px 170px;
+    gap: 50px;
+}
+
+.legends__card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgb(14, 14, 14) 0%,
+        rgba(14, 14, 14, 0.534) 50%,
+        rgba(14, 14, 14, 0.055) 90%,
+    );
+
+    opacity: 0;
+    transition: opacity .35s ease;
+
+    z-index: 2;
+} 
+
+.legends__card img {
+    width: 100%;
+    display: block;
+
+    opacity: 1;
+    transition: opacity .35s ease;
+}
+
+.legends__info {
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 
+      opacity .35s ease
+      transform .35s ease;
+
+  z-index: 3;
+}
+
+.legends__info h3 {
+    font-family: var(--font-family-subtitle);
+    font-size: 20px;
+}
+
+.legends__info p {
+    font-family: var(--font-family-text);
+    font-size: 15px;
+}
+
+.legends__card:hover::after {
+    opacity: 1;
+}
+
+.legends__card:hover .legends__info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+/* footer */
+
+.footer__header {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 50px;
+    margin: 50px;
+}
+
+.footer h3 {
+    font-family: var(--font-family-header-text);
+    text-transform: uppercase;
+}
+
+.footer p {
+    font-family: var(--font-family-text);
+    color: #B2B2B2;
+    font-size: 10px;
+    margin-top: -10px;
+}
+
+.footer__secondinfo {
+    font-family: var(--font-family-text);
+    color: #B2B2B2;
+    font-size: 10px;
+}
+.email {
+    border: 1px solid #ffff;
+    background: transparent;
+    border-radius: 30px;
+    width: 250px;
+    font-family: var(--font-family-text);
+    font-size: 10px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.footer__secondinfo {
+    margin: 50px;
+}
+
+
+}

@@ -1,0 +1,200 @@
+@use "../base/variables" as *;
+
+.intro {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 100px;
+    text-align: center;
+  }
+
+  &__card {
+    position: relative;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    width: 100%;
+    max-width: 600px;
+    min-height: 600px;
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__image {
+    position: absolute;
+    right: 10px;
+    bottom: -100px;
+    z-index: 2;
+
+    width: 80%;
+    height: auto;
+
+    transform: translateY(-50%);
+  }
+
+  &__content {
+    position: relative;
+    bottom: 50px;
+    z-index: 4;
+
+    text-align: center;
+
+    p {
+      font-family: $font-text;
+      font-size: 15px;
+      color: $color-text;
+    }
+  }
+
+  &__title {
+    font-family: $font-head-title;
+    font-size: clamp(36px, 8vw, 128px);
+    letter-spacing: 0.13em;
+  }
+}
+
+/* Вспомогательный слой градиента */
+.layer-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  margin-bottom: 40px;
+
+  background: linear-gradient(
+    to top,
+    rgb(14, 14, 14) 10%,
+    rgba(14, 14, 14, 0.5) 35%,
+    rgba(14, 14, 14, 0) 70%
+  );
+  pointer-events: none;
+}
+
+
+@media (min-width: 1200px) {
+
+  .intro {
+    padding: 350px 50px 0;
+
+    .intro__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__card--ivan,
+    &__card--ernest {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__card--ivan {
+      position: relative;
+
+      .img__ivan {
+        display: block;
+        width: 1000px;
+        height: auto;
+
+        flex-shrink: 0;
+        margin-left: -350px;
+        z-index: 2;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background: linear-gradient(
+        to top,
+        rgb(14, 14, 14) 15%,
+        rgba(14, 14, 14, 0.6) 30%,
+        rgba(14, 14, 14, 0) 45%
+      );
+      z-index: 3;
+
+      }
+
+      .intro__content {
+        position: absolute;
+        max-width: 600px;
+        text-align: left;
+        transform: translate(390px, -350px);
+        
+        z-index:5;
+      }
+    }
+
+    &__card--ernest {
+      position: relative;
+      flex-direction: row-reverse;
+      z-index: 4;
+      margin-left: 550px;
+      margin-top: -350px;
+
+      .img__ernest {
+        display: block;
+        max-width: none;
+        flex-shrink: 0;
+
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background: linear-gradient(
+        to top,
+        rgb(14, 14, 14) 15%,
+        rgba(14, 14, 14, 0.6) 30%,
+        rgba(14, 14, 14, 0) 45%
+      );
+      }
+      
+      }
+
+      .intro__content {
+        position: absolute;
+        transform: translate(-550px, -130%);
+        max-width: 650px;
+      }
+
+    }
+
+    .intro__content {
+      h3 {
+      margin-bottom: 24px;
+
+      font-family: $font-head-title;
+      font-size: 96px;
+      text-transform: uppercase;
+      line-height: .9;
+      text-align: left;
+    }
+
+    p {
+        font-family: $font-text;
+        font-size: 16px;
+        line-height: 1.8;
+        color: $color-text;
+        text-align: left;
+      }
+    }
+  }
+
+}

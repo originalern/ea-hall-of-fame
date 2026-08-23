@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall of Fame</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="./js/main.js"></script>
+</head>
+<body>
+    <header class="header">
+
+            <div class="header__container container">
+
+                <a href="./index.html">
+                    <img 
+                    class="header-logo-image" 
+                    src="./assets/image/header/Hall of Fame-logo.png" 
+                    alt="hall-of-fame-logo" 
+                    width="222" 
+                    height="50" 
+                    loading="lazy"
+                    >
+                </a>
+                
+
+                
+                <nav class="header__menu">
+
+                    <div class="header__nav" onclick="myFunction(this)">
+                        <div class="line-1"></div>
+                        <div class="line-2"></div>
+                        <div class="line-3"></div>
+                    </div>
+
+                    <ul class="header__list">
+
+                        <li class="header__item">
+                            <a class="header-menu__link" href="./index.html">Главная</a>
+                        </li>
+                        <!-- <li class="header__item">
+                            <a class="header-menu__link" href="">Статьи</a>
+                        </li> -->
+                        <li class="header__item">
+                            <a class="header-menu__link" href="./pages/football/football-list.html">Футбол</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header-menu__link" href="./pages/boxing/boxers-list.html">Бокс</a>
+                        </li>       
+
+                    </ul>
+
+                </nav>                
+            </div>
+    </header>
+
+    <main class="main__container">
+        <h1 class="visually-hidden">Hall of Fame</h1>
+
+        <section class="hero">
+            <h2 class="visually-hidden">Hero</h2>
+
+            <div class="hero__container container">
+                <h3 class="hero__title">Hall of Fame</h3>
+                <p class="hero__subtitle">worldwide</p>
+                
+                <div class="hero__about">
+                    <p>
+                        Новости живут один день. Рекорды бьются каждый год. <br>Но есть те, кто ломает сами правила игры. Зал Славы создан не для победителей. Он создан для тех, кто стал синонимом своей дисциплины. Здесь время останавливается.
+                    </p>
+                </div>                
+            </div>
+            
+        </section>
+
+        <section class="intro">
+
+            <h2 class="visually-hidden">Intro</h2>
+
+           <div class="intro__container">
+  
+            <article class="intro__card--ivan">          
+
+                <div class="img__ivan">
+                <img 
+                    class="intro__ivan-l" 
+                    src="./assets/image/intro/ivan.png" 
+                    alt="Иван Кузнецов с поясами">
+                </div>                   
+
+                <div class="intro__content">
+                    <h3 class="intro__title">Зал славы</h3>
+                    <p>
+                        Это цифровой архив величайших спортсменов, 
+                        чьи карьеры стали частью истории. 
+                        Здесь нет прогнозов, рейтингов и ожиданий. 
+                        Только завершенные пути, навсегда 
+                        оставившие след в мировом спорте.
+                    </p>
+                </div>
+            </article>
+
+            <article class="intro__card--ernest">
+
+                <div class="img__ernest" >
+                    <img 
+                    class="intro__ernest-r" 
+                    src="./assets/image/intro/Эрнест Березовский.png" 
+                    alt="Эрнест Березовский в форме ЛА гелакси">
+                </div>
+                    
+                
+                <div class="intro__content">
+                    <h3>Вечное наследие</h3>
+                    <p>
+                        В Зал Славы принимаются исключительно спортсмены, 
+                        официально завершившие профессиональную карьеру. 
+                        Завершение карьеры не является гарантией включения. 
+                        Лишь после окончательного рассмотрения спортсмен получает 
+                        статус члена Зала Славы, а его биография становится 
+                        частью вечного архива. С этого момента история больше 
+                        не изменяется — достижения фиксируются навсегда.
+                    </p>
+                </div>
+            </article>            
+           </div>
+
+        </section>
+
+        <section class="category">
+            <h2 class="section__name">Дисциплины</h2>
+            <div class="category__about">
+                <p> Исследуйте архивы
+                посвященные величайшим спортсменам
+                разных видов спорта </p>
+            </div>
+
+            <div class="container">
+                <a href="./pages/football/football-list.html" class="category__card">
+                    <img src="./assets/image/category/football.png" alt="Футбол" width="700" height="680" loading="lazy">
+                    <div class="category__info">
+                        <h3 class="category__title">Футбол</h3>
+                    </div>
+                </a>
+
+                <a href="./pages/boxing/boxers-list.html" class="category__card">
+                    <img src="./assets/image/category/boxing.png" alt="Бокс" width="700" height="680" loading="lazy">
+                    <div class="category__info">
+                        <h3 class="category__title">Бокс</h3>
+                    </div>
+                </a>                
+            </div>
+            
+        </section>
+
+        <section class="candidates">
+
+            <h2 class="section__name">Кандидаты</h2>
+
+            <div class="candidates__cards">
+
+            <article class="candidates__card">
+                <img src="./assets/image/pretenders/miller.png" alt="">
+                <div  class="candidates__info">
+                    <h3>Брюс Миллер</h3>
+                    <p>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Англия</p>
+                </div>
+            </article>
+
+            <article class="candidates__card">
+                <img src="./assets/image/pretenders/facundo.png" alt="">
+                <div class="candidates__info">
+                    <h3>Факундо Гарсия</h3>
+                    <p>🇦🇷 Аргентина</p>                    
+                </div>
+            </article>
+
+            </div>
+
+
+        </section> 
+
+        <section class="partners">
+            <h2 class="section__name">ОФИЦИАЛЬНЫЕ ПАРТНЕРЫ</h2>
+
+            <div class="partners__container">
+                <div class="partners__track">
+
+                    <!-- 1. Первый список (оригинал) -->
+                    <ul class="partners__list">
+                        <li class="partners__link">
+                            <a href="https://www.adidas.com/us" target="_blank">
+                                <img src="./assets/image/partners/adidas-13 1.png" alt="Adidas" width="100" height="100">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wbcboxing.com" target="_blank">
+                                <img src="./assets/image/partners/wbc.png" alt="" width="100" height="100">
+                            </a>
+                        </li>                     
+                        <li>
+                            <a href="https://cletoreyes.com/en?srsltid=AfmBOoorSjc9FvfaWM43a8AqSIan2WpfN3ORRhzQd25Qi-GcSO_KW0KW" target="_blank">
+                                <img src="./assets/image/partners/pngaaa.com-2236775.png" alt="Cleto Reyes" width="100" height="100">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wboboxing.com" target="_blank">
+                                <img src="./assets/image/partners/wbo.png" alt="WBO" width="100" height="100">
+                            </a>
+                        </li> 
+                        <li>
+                            <a href="https://www.fifa.com" target="_blank">
+                                <img src="./assets/image/partners/fifa_PNG7.png" alt="FIFA" width="100" height="100">
+                            </a>
+                        </li>                        
+                        <li>
+                            <a href="https://www.ibf-usba-boxing.com" target="_blank">
+                                <img src="./assets/image/partners/ibf.png" alt="" width="100" height="100">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.amica.com" target="_blank">
+                                <img src="./assets/image/partners/Amica+HOF+Series+Logo.png" alt="Amica" width="150" height="150">
+                            </a>
+                        </li>                    
+                        <li>
+                            <a href="https://www.goldenboy.com" target="_blank">
+                                <img src="./assets/image/partners/golden-boy.png" alt="Golden Boy" width="100" height="100">
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- 2. Второй список (точно такой же дубликат) -->
+                    <ul class="partners__list" aria-hidden="true">
+                        <li class="partners__link">
+                            <a href="https://www.adidas.com/us" target="_blank">
+                                <img src="./assets/image/partners/adidas-13 1.png" alt="Adidas" width="100" height="100">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wbcboxing.com" target="_blank">
+                                <img src="./assets/image/partners/wbc.png" alt="" width="100" height="100">
+                            </a>
+                        </li>                     
+                        <li>
+                            <a href="https://cletoreyes.com/en?srsltid=AfmBOoorSjc9FvfaWM43a8AqSIan2WpfN3ORRhzQd25Qi-GcSO_KW0KW" target="_blank">
+                                <img src="./assets/image/partners/pngaaa.com-2236775.png" alt="Cleto Reyes" width="100" height="100">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wboboxing.com" target="_blank">
+                                <img src="./assets/image/partners/wbo.png" alt="WBO" width="100" height="100">
+                            </a>
+                        </li> 
+                        <li>
+                            <a href="https://www.fifa.com" target="_blank">
+                                <img src="./assets/image/partners/fifa_PNG7.png" alt="FIFA" width="100" height="100">
+                            </a>
+                        </li>                        
+                        <li>
+                            <a href="https://www.ibf-usba-boxing.com" target="_blank">
+                                <img src="./assets/image/partners/ibf.png" alt="" width="100" height="100">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.amica.com" target="_blank">
+                                <img src="./assets/image/partners/Amica+HOF+Series+Logo.png" alt="Amica" width="150" height="150">
+                            </a>
+                        </li>                
+                        <li>
+                            <a href="https://www.goldenboy.com" target="_blank">
+                                <img src="./assets/image/partners/golden-boy.png" alt="Golden Boy" width="100" height="100">
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="poster">
+            <h2 class="visually-hidden">Постер</h2>
+            <div class="poster_quote">
+                <img src="./assets/image/poster/smith.png" alt="Элрой Смит">
+
+                <div class="quote__title">
+                    <h3>Величие остается в вечности</h3>
+                </div>
+            </div>
+        </section>
+    
+    </main>
+
+    <footer class="footer">
+            <div class="footer__header">
+
+                <div class="footer__about-us">
+                    <h3>О нас</h3>
+                    <p>Один бескомпромиссный путь <br> к спортивному бессмертию.</p>
+                </div>
+                <div class="footer__work-time">
+                    <h3>Рабочие часы</h3>
+                    <p>Понедельник - Пятница <br> 09:00 - 20:00</p>
+                </div>
+                <div class="footer__location">
+                    <h3>Локация</h3>
+                    <p>68 Jay Street, Brooklyn, NY 11201, United States</p>
+                    <p>hallofame@fame.com</p>
+                    <p>+(1)718-407-6400</p>
+                </div>   
+                
+                <div>
+                    <h3>Напишите нам</h3>
+                    <label for="Email"></label>
+                    <input class="email" type="email" placeholder="Email">
+                </div>
+            </div>
+            <div><hr></div>
+            <span class="footer__secondinfo">© 2026 Hall of Fame, All Rights Reserved | Privacy Policy | Contact Us</span>
+    </footer>
+
+
+
+</body>
+</html>

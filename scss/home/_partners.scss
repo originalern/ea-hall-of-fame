@@ -1,0 +1,116 @@
+@use "../base/variables" as *;
+
+
+/* =========================
+   MOBILE FIRST
+========================= */
+
+.partners {
+    margin-bottom: 120px;
+    overflow: hidden;
+
+    .section__name {
+        display: flex;
+        justify-content: center;
+
+        margin-bottom: 40px;
+
+        font-family: $font-head-title;
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &__container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__track {
+        display: flex;
+        width: max-content;
+
+        animation: partners 20s linear infinite;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        gap: 35px;
+        padding-right: 35px;
+        margin: 0;
+    }
+
+    img {
+        display: block;
+
+        width: 70px;
+        height: auto;
+
+        filter: brightness(75%);
+
+        transition:
+            transform $transition-duration,
+            filter $transition-duration;
+    }
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 1200px) {
+
+    .partners {
+        margin-bottom: 250px;
+
+        .section__name {
+            margin-bottom: 60px;
+
+            font-size: clamp(
+                2.5rem,
+                0.502rem + 8.52vw,
+                10.625rem
+            );
+        }
+
+        &__track {
+            animation-duration: 25s;
+        }
+
+        &__list {
+            gap: 70px;
+            padding-right: 70px;
+        }
+
+        img {
+            width: 100px;
+
+            &:hover {
+                transform: scale(1.1);
+                filter: brightness(100%);
+            }
+        }
+    }
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes partners {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}

@@ -1,0 +1,69 @@
+@use "../base/variables" as *;
+
+.tumblr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    padding: 30px;
+
+    .section__name {
+        margin-bottom: 24px;
+        font-family: $font-head-title;
+        font-size: clamp(2.5rem, 0.502rem + 8.52vw, 10.625rem);
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .news__ticker {
+        display: flex;
+
+        .news-ticker__item {
+
+            h3 {
+                font-family: $font-header-text;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+@media (min-width:1200px) {
+
+.tumblr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    max-width: 1800px;
+
+    .section__name {
+        margin-bottom: 24px;
+        font-family: $font-head-title;
+        font-size: clamp(2.5rem, 0.502rem + 8.52vw, 10.625rem);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        text-transform: uppercase;
+    }
+
+    .news__ticker {
+        display: flex;
+
+        .news-ticker__item {
+
+            h3 {
+                font-family: $font-header-text;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+}

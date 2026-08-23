@@ -1,0 +1,31 @@
+// 1. Подключаем шрифты (генерирует правила @font-face)
+@use "base/fonts";
+
+// 2. Подключаем CSS-переменные (задаёт :root)
+@use "base/variables" as *;
+
+// 3. Подключаем сброс стилей и базовые классы
+@use "base/reset";
+
+@use "base/global";
+
+@use "layout/header";
+
+@use "home/hero";
+@use "home/intro";
+@use "home/category";
+@use "home/candidates";
+@use "home/partners";
+@use "home/poster";
+
+@use "boxing/boxers-list";
+@use "boxing/ivan-k";
+@use "boxing/andropov";
+@use "boxing/campbell";
+
+@use "football/football-list";
+@use "football/berezovsky";
+
+
+
+@use "layout/footer"; 

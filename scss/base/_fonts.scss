@@ -1,0 +1,63 @@
+// 1. Описываем список всех шрифтов проекта
+$fonts: (
+  (
+    "family": "Cormorant Garamond",
+    "file": "CormorantGaramond-Light",
+    "weight": 300
+  ),
+  (
+    "family": "Golos Text",
+    "file": "GolosText-ExtraBold",
+    "weight": 800
+  ),
+  (
+    "family": "Roboto Mono",
+    "file": "RobotoMono-Regular",
+    "weight": 400
+  ),
+  (
+    "family": "Inter",
+    "file": "Inter_18pt-Regular",
+    "weight": 400
+  ),
+  (
+    "family": "Roboto Condensed",
+    "file": "Roboto-Condensed-Regular",
+    "weight": 400
+  ),
+  (
+    "family": "Alumni Sans",
+    "file": "AlumniSans-Light",
+    "weight": 300
+  ),
+  (
+    "family": "Marcellus SC",
+    "file": "MarcellusSC-Regular",
+    "weight": 400
+  ),
+  (
+    "family":"Bebas Neue",
+    "file": "BebasNeue-Regular",
+    "weight": 400
+  )
+);
+
+// 2. Универсальный миксин для генерации @font-face
+@mixin font-face($family, $file, $weight: 400, $style: normal) {
+  @font-face {
+    font-family: $family;
+    src: url("../../assets/font/#{$file}.woff2") format("woff2");
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+// 3. Автоматически генерируем все подключения
+@each $font in $fonts {
+  @include font-face(
+    map-get($font, "family"),
+    map-get($font, "file"),
+    map-get($font, "weight")
+  );
+}

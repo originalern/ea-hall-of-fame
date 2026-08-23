@@ -1,0 +1,257 @@
+@use "../base/variables" as *;
+
+
+// ========================================
+// MOBILE FIRST
+// 0px — 1199px
+// ========================================
+
+.football-bio {
+    width: 100%;
+    padding: 60px 0;
+
+    background: $color-dark;
+
+
+    .section__title {
+        margin-bottom: 50px;
+
+        font-family: $font-head-title;
+        font-size: clamp(2.5rem, 9vw, 4.5rem);
+        font-weight: 400;
+
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .35em;
+    }
+
+
+    &__container {
+        width: min(100% - 40px, 1000px);
+        margin-inline: auto;
+    }
+
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        margin-bottom: 50px;
+
+
+        p {
+            margin: 0;
+
+            font-family: $font-text;
+            font-size: .9rem;
+            line-height: 1.8;
+
+            color: $color-text;
+            text-align: left;
+        }
+    }
+
+
+    // ========================================
+    // БОЛЬШАЯ ФОТОГРАФИЯ
+    // ========================================
+
+    &__media {
+        position: relative;
+
+        width: 100vw;
+        height: 420px;
+
+        margin-left: calc(50% - 50vw);
+        margin-bottom: 50px;
+
+        overflow: hidden;
+
+
+        img {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+        }
+
+
+        &::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background: linear-gradient(
+                to top,
+                $color-dark 0%,
+                rgba(14, 14, 14, .65) 18%,
+                rgba(14, 14, 14, 0) 45%
+            );
+
+            pointer-events: none;
+        }
+    }
+
+
+    // ========================================
+    // ГЛАВА С БОЛЬШОЙ ФОТОГРАФИЕЙ
+    // ========================================
+
+    &__chapter {
+        margin-top: 90px;
+    }
+
+
+    &__chapter-media {
+        position: relative;
+
+        width: 100vw;
+        height: 500px;
+
+        margin-left: calc(50% - 50vw);
+
+        overflow: hidden;
+
+
+        img {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+        }
+
+
+        &::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background: linear-gradient(
+                to bottom,
+                transparent 45%,
+                rgba(14, 14, 14, .6) 72%,
+                $color-dark 100%
+            );
+
+            pointer-events: none;
+        }
+    }
+
+
+    &__chapter-content {
+        position: relative;
+
+        margin-top: -80px;
+
+        z-index: 2;
+
+
+        h3 {
+            margin: 0 0 25px;
+
+            font-family: $font-subtitle;
+            font-size: clamp(1.8rem, 6vw, 3rem);
+
+            text-transform: uppercase;
+        }
+
+
+        p {
+            margin: 0 0 20px;
+
+            font-family: $font-text;
+            font-size: .9rem;
+            line-height: 1.8;
+
+            color: $color-text;
+        }
+    }
+}
+
+
+// ========================================
+// DESKTOP
+// 1200px +
+// ========================================
+
+@media (min-width: 1200px) {
+
+    .football-bio {
+        padding: 120px 0;
+
+
+        .section__title {
+            margin-bottom: 80px;
+
+            font-size: clamp(4rem, 5vw, 6rem);
+            letter-spacing: .4em;
+        }
+
+
+        &__container {
+            width: min(100% - 100px, 1400px);
+        }
+
+
+        &__text {
+            max-width: 1200px;
+
+            margin-inline: auto;
+            margin-bottom: 80px;
+
+            gap: 30px;
+
+
+            p {
+                font-size: 1.1rem;
+                line-height: 1.9;
+            }
+        }
+
+
+        &__media {
+            height: 700px;
+
+            margin-bottom: 90px;
+        }
+
+
+        &__chapter {
+            margin-top: 150px;
+        }
+
+
+        &__chapter-media {
+            height: 850px;
+        }
+
+
+        &__chapter-content {
+            max-width: 1200px;
+
+            margin: -130px auto 0;
+
+
+            h3 {
+                margin-bottom: 35px;
+
+                font-size: clamp(3rem, 4vw, 5rem);
+            }
+
+
+            p {
+                font-size: 1.1rem;
+                line-height: 1.9;
+            }
+        }
+    }
+}
