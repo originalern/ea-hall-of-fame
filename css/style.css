@@ -203,6 +203,12 @@ main {
   justify-content: center;
 }
 
+.main__container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -220,7 +226,7 @@ main {
   justify-content: space-between;
 }
 .header__logo-image {
-  width: 110px;
+  width: 50px;
   height: auto;
 }
 .header__menu {
@@ -673,7 +679,6 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  padding: 40px 20px;
 }
 .candidates .section__name {
   font-family: "Alumni Sans", sans-serif;
@@ -1839,7 +1844,7 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
-  padding: 50px;
+  padding: 30px;
 }
 
 .legends__card {
@@ -1855,7 +1860,7 @@ main {
 .legends__card::after {
   content: "";
   position: absolute;
-  background: linear-gradient(to top, rgba(69, 58, 28, 0.877) 0%, rgba(71, 58, 25, 0.241) 30%);
+  background: linear-gradient(to top, rgba(69, 58, 28, 0.3) 0%, rgba(71, 58, 25, 0.202) 50%);
   inset: 0;
   z-index: 1;
 }
@@ -1969,15 +1974,17 @@ main {
 .player-header__card {
   position: relative;
   width: 100%;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
 }
 .player-header__card img {
-  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .player-header__card::after {
   content: "";
@@ -2266,9 +2273,8 @@ main {
   align-items: center;
 }
 .football-review__player {
-  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 .football-review__chart {
   position: absolute;
