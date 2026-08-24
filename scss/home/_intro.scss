@@ -120,21 +120,6 @@
         z-index: 2;
       }
 
-      &::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-
-        background: linear-gradient(
-        to top,
-        rgb(14, 14, 14) 15%,
-        rgba(14, 14, 14, 0.6) 30%,
-        rgba(14, 14, 14, 0) 45%
-      );
-      z-index: 3;
-
-      }
-
       .intro__content {
         position: absolute;
         max-width: 600px;
