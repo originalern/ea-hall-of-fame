@@ -139,8 +139,12 @@
     .player-header {
 
         &__card {
-            width: auto;
 
+            width: 1200px;
+            height: auto;
+
+            overflow: visible;
+            
             &::after {
                 height: 35%;
 
