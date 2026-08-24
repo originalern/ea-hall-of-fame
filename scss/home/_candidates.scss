@@ -119,8 +119,6 @@
 
     .candidates {
         gap: 50px;
-        padding: 60px;
-
 
         .section__name {
             font-size: clamp(
@@ -142,11 +140,7 @@
 
         &__card {
             max-width: none;
-
-            cursor: pointer;
-
             border-radius: 104px;
-
 
             img {
                 transition:

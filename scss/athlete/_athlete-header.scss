@@ -25,9 +25,9 @@
 
         img {
             display: block;
-
             width: 100%;
-            height: auto;
+            height: 600px;
+            object-fit: cover;
         }
 
         &::after {
@@ -138,9 +138,15 @@
 @media (min-width: 1200px) {
 
     .athlete-header {
-
+        
         &__card {
-            width: auto;
+            width: 1200px;
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
 
             &::after {
                 height: 35%;
@@ -164,7 +170,7 @@
                 font-size: clamp(
                     2.5rem,
                     12.5vw,
-                    10.375rem
+                    9.5rem
                 );
 
                 text-align: center;

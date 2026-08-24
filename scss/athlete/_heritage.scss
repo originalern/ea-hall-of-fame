@@ -83,6 +83,27 @@
         list-style: none;
     }
 
+ &__item-belts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        margin: 0;
+
+        img {
+            width: 180px;
+            height: auto;
+            display: block;
+        }
+
+        h4 {
+            margin: 0;
+            font-family: $font-stat;
+            font-size: 1.2rem;
+        }
+    }    
 
     &__item {
         min-width: 0;
@@ -98,7 +119,7 @@
             display: block;
 
             width: 100%;
-            max-width: 100px;
+            max-width: 60px;
             height: 100px;
 
             object-fit: contain;

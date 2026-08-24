@@ -51,7 +51,7 @@
             display: block;
 
             width: 100%;
-            height: auto;
+
         }
 
 
@@ -81,28 +81,32 @@
 
     &__badges {
         position: relative;
-
         width: 100%;
 
+
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
 
-        gap: 15px;
-
-        margin-top: -50px;
-
         z-index: 2;
 
-
         img {
-            display: block;
-
             width: 100%;
-            max-width: 120px;
-            height: auto;
+            height: 100%;
+            
         }
+
+            p {
+                margin: 0;
+
+                font-family: $font-text;
+                font-size: 1rem;
+                line-height: 1.6;
+
+                
+                text-align: center;
+            }        
     }
 
 
@@ -156,9 +160,11 @@
             margin: 0;
 
             font-family: $font-stat;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
     }
+
+    
 }
 
 
@@ -224,17 +230,53 @@
 
 
         &__badges {
-            position: absolute;
-
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 150px;
             max-width: 1200px;
+            height: auto;
 
-            margin-top: 350px;
+            .ko {
+                text-align: center;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                background-color: #141313;
+                border-radius: 24px;
+                padding: 50px;
 
-            transform: translateY(100%);
+                width: 100%;
+                height: 300px;
 
+                .img__ko {
+                    display: flex;
+                    justify-content: center;
+                    width: 500px;
+                }
 
-            img {
-                max-width: none;
+            }
+
+            .fast__ko {
+                text-align: center;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                background-color: rgb(21, 21, 21);
+                border-radius: 50px;
+                padding: 50px;    
+                
+                height: 300px;
+
+                .img__ko {
+                    display: flex;
+                    justify-content: center;
+                    width: 500px;
+                }
+            }
+
+            h3 {
+                width: 300px;
+                padding: 0;
+                border-radius: 50px;
+                font-size: 140px;                
             }
         }
 
@@ -249,7 +291,6 @@
             width: 100%;
             max-width: 1500px;
 
-            margin-top: 450px;
         }
 
 
@@ -265,6 +306,8 @@
                 border-radius: 50px;
 
                 font-size: 40px;
+
+                margin-top: 50px;
             }
 
 
