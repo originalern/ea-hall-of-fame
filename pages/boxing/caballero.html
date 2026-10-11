@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пабло Кабаллеро</title>
+    <script type="module" src="/js/main.js"></script>
+</head>
+<body>
+
+    <header class="header">
+
+            <div class="header__container container">
+
+                <a href="../../index.html">
+                    <img 
+                    class="header-logo-image" 
+                    src="/assets/image/header/logo.svg" 
+                    alt="hall-of-fame-logo" 
+                    width="222" 
+                    height="50" 
+                    loading="lazy"
+                    >
+                </a>
+        
+                
+                <nav class="header__menu">
+
+                    <div class="header__nav" onclick="myFunction(this)">
+                        <div class="line-1"></div>
+                        <div class="line-2"></div>
+                        <div class="line-3"></div>
+                    </div>
+
+                    <ul class="header__list">
+
+                        <li class="header__item">
+                            <a class="header-menu__link" href="../../index.html">Главная</a>
+                        </li>
+                        <!-- <li class="header__item">
+                            <a class="header-menu__link" href="">Статьи</a>
+                        </li> -->
+                        <li class="header__item">
+                            <a class="header-menu__link" href="../../pages/football/football-list.html">Футбол</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header-menu__link" href="../../pages/boxing/boxers-list.html">Бокс</a>
+                        </li>       
+
+                    </ul>
+
+                </nav>                
+            </div>
+    </header>
+    
+    <main>
+        <h1 class="visually-hidden">Пабло Кабаллеро</h1>  
+
+        <!-- Шапка спортсмена -->
+        <section class="athlete-header">
+            <h2 class="visually-hidden">Статистика</h2>  
+
+            <div class="athlete-header__card">
+                <img src="/assets/image/boxing/kuznetsov/kuz1.webp" alt="Тони Гразиано">
+
+                <div class="athlete-header__name">
+                    <h3>Пабло Кабаллеро</h3>
+                </div>
+            </div>
+
+            <div class="athlete-stats">
+                <div class="athlete-stats__item">
+                    <h3>WIN</h3>
+                    <p>68</p>
+                </div>
+
+                <div class="athlete-stats__item">
+                    <h3>L</h3>
+                    <p>3</p>
+                </div>
+
+                <div class="athlete-stats__item">
+                    <h3>KO</h3>
+                    <p>42</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Наследие / Награды -->
+        <section class="heritage container">
+            <h2 class="section__title">Наследие</h2>
+
+            <div class="heritage__category container">
+                <div class="heritage__category-header">
+                    <h3 class="section__subtitle">Средний вес</h3>
+                    <p>Защита титула</p>
+                </div>
+
+                <ul class="heritage__list">
+                    <li class="heritage__item">
+                        <img src="/assets/image/boxing/logo-boxing/wbc_1.webp" alt="" width="60" height="60" loading="lazy">
+                        <h4>8</h4>
+                    </li>
+                    <li class="heritage__item">
+                        <img src="/assets/image/boxing/logo-boxing/wba.webp" alt="" width="60" height="60" loading="lazy">
+                        <h4>8</h4>
+                    </li>
+                    <li class="heritage__item">
+                        <img src="/assets/image/boxing/logo-boxing/ibf-2.webp" alt="" width="60" height="60" loading="lazy">
+                        <h4>7</h4>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="heritage__category">
+                <div class="heritage__category-header">
+                    <h3 class="section__subtitle">Полутяжелый вес</h3>
+                    <p>Защита титула</p>
+                </div>              
+
+                <ul class="heritage__list">
+                    <li class="heritage__item">
+                        <img src="/assets/image/boxing/logo-boxing/wbc_1.webp" alt="" width="100" height="100" loading="lazy">
+                        <h4>7</h4>
+                    </li>
+                    <li class="heritage__item">
+                        <img src="/assets/image/boxing/logo-boxing/wba.webp" alt="" width="100" height="100" loading="lazy">
+                        <h4>7</h4>
+                    </li>
+                    <li class="heritage__item">
+                        <img src="/assets/image/boxing/logo-boxing/ibf-2.webp" alt="" width="100" height="100" loading="lazy">
+                        <h4>8</h4>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="heritage__category">
+                <div class="heritage__category-header">
+                    <h3 class="section__subtitle">Всего защит</h3>
+                    <p>За всю карьеру</p>
+                </div>                     
+
+                <ul class="heritage__list">
+                    <li class="heritage__item">
+                        <img src="/assets/image/boxing/logo-boxing/wbc_1.webp" alt="" width="100" height="100" loading="lazy">
+                        <h4>15</h4>
+                    </li>
+                    <li class="heritage__item">
+                        <img src="/assets/image/boxing/logo-boxing/wba.webp" alt="" width="100" height="100" loading="lazy">
+                        <h4>15</h4>
+                    </li>
+                    <li class="heritage__item">
+                        <img src="/assets/image/boxing/logo-boxing/ibf-2.webp" alt="" width="100" height="100" loading="lazy">
+                        <h4>14</h4>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="heritage__category">
+                <div class="heritage__category-header">
+                    <h3 class="section__subtitle">Завоеванные титулы</h3>
+                    <p>Количество завоеванных поясов</p>
+                </div>                     
+
+                <ul class="heritage__list">
+                    <li class="heritage__item-belts">
+                        <img src="/assets/image/boxing/logo-boxing/WBC-belt.webp" alt="" width="100" height="100" loading="lazy">
+                        <h4>3</h4>
+                    </li>
+                    <li class="heritage__item-belts">
+                        <img src="/assets/image/boxing/logo-boxing/WBO-belt.webp" alt="" width="100" height="100" loading="lazy">
+                        <h4>3</h4>
+                    </li>
+                    <li class="heritage__item-belts">
+                        <img src="/assets/image/boxing/logo-boxing/IBF-belt.webp" alt="" width="100" height="100" loading="lazy">
+                        <h4>3</h4>
+                    </li>
+                    <li class="heritage__item-belts">
+                        <img src="/assets/image/boxing/logo-boxing/WBA-belt.webp" alt="" width="100" height="100" loading="lazy">
+                        <h4>1</h4>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Обзор -->
+        <section class="review">
+            <h2 class="section__title">ОБЗОР</h2>
+
+            <div class="review__media">
+                <img src="/assets/image/boxing/kuznetsov/Антропометрия.webp" alt="Тони Гразиано антропометрия" width="1700" height="2500" loading="lazy">
+            </div>
+
+                <div class="review__badges">
+                    <div class="ko">
+                        <div class="img__ko"><img src="/assets/image/boxing/kuznetsov/Group 33.svg" alt=""></div>
+                        <p>Процент побед боксер одержал нокаутом или техническим нокаутом.</p>
+                    </div>
+
+                    <div class="fast__ko">
+                        <div class="img__ko"><img src="/assets/image/boxing/kuznetsov/Group 33.svg" alt=""></div>
+                        <p>Чем выше показатель, тем чаще боксер заканчивал бой быстро.</p>
+                    </div>
+                </div>
+
+                <div class="review__specs"> 
+                    
+                    <div class="review__spec-item">
+                        <h3>Стойка</h3>
+                        <p>Правша</p>
+                    </div>
+                    
+                    <div class="review__spec-item">
+                        <h3>Вес</h3>
+                        <p>155</p>
+                    </div>                         
+
+                    <div class="review__spec-item">
+                        <h3>Стиль</h3>
+                        <p>Классический</p>
+                    </div>    
+                </div>            
+        </section>
+
+        <!-- Аналитика и команда -->
+        <section class="analytics">
+            <h2 class="section__title">Аналитика</h2>  
+
+            <div class="container">
+                <article class="analytics__block">
+                    <div class="analytics__cards">
+                        <div class="analytics__card">
+                            <h2>Сила удара</h2>
+                            <p>При прямом попадании</p>
+                            <img src="../../assets/image/boxing/kuznetsov/bg-power.svg" alt="">
+                        </div>
+
+                        <div class="analytics__card">
+                            <h2>Скорость</h2>
+                            <p>Скорость ударов/передвижения</p>
+                            <img src="../../assets/image/boxing/kuznetsov/bg-speed.svg" alt="">                            
+                        </div>
+
+                        <div class="analytics__card">
+                            <h2>Стойкость</h2>
+                            <p>Это то, насколько хорошо боец подготовлен физически</p>
+                            <img src="../../assets/image/boxing/kuznetsov/стойкость.svg" alt="">
+                        </div>
+
+                        <div class="analytics__card">
+                            <h2>Рефлексы</h2>
+                            <p>Позволяет уклоняться от ударов в последний момент</p>
+                            <img src="../../assets/image/boxing/kuznetsov/Рефлексы.png" alt="">
+                        </div>   
+                    </div>
+
+                    <div class="analytics__details">
+                        <div class="analytics__detail-item">
+                            <h3>IQ</h3>
+                            <p> 
+                                Главное оружие Ивана. 
+                                Во время боя постоянно менял рисунок поединка. 
+                                Изучал соперника. Ломал его привычный стиль. 
+                                Практически никогда не шел по одному сценарию.
+                            </p>
+                        </div>
+
+                        <div class="analytics__detail-item">
+                            <h3>Характер боя</h3>
+                            <p>
+                                Первые раунды посвящал изучению соперника. 
+                                Начиная с середины боя постепенно забирал инициативу. 
+                                Практически никогда не форсировал события. 
+                                Предпочитал побеждать за счет полного контроля.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <section class="team">
+                    <h2 class="section__title">Команда</h2>  
+
+                    <div class="team__list">
+                        <div class="team__item">
+                            <h3>Менеджер</h3>
+                            <a href="#"><p>-</p></a>
+                        </div>
+
+                        <div class="team__item">
+                            <h3>Тренер</h3>
+                            <a href="#"><p>Александр Зимин</p></a>
+                            <p>Мерсер «Слим» Робинсон</p>
+                        </div>
+
+                        <div class="team__item">
+                            <h3>Катмэн</h3>
+                            <a href="#"><p>Мигель Диас</p></a>
+                        </div>                    
+                    </div>
+                </section>                
+            </div>
+        </section>  
+
+        <!-- Биография -->
+<section class="bio">
+    <h2 class="section__title">Биография</h2>
+
+    <div class="bio__container container">
+
+        <article class="bio__intro">
+
+            <div class="bio__media-wrapper">
+                <img 
+                src="../../assets/image/boxing/kuznetsov/intro-bio.webp" 
+                alt="Иван Кузнецов"
+                loading="lazy"
+                >
+            </div>
+
+            <div class="container">
+                <div class="bio__intro-text">
+                    <p>
+                        <i></i>
+                    </p>
+                </div>
+            </div>
+
+
+        </article>
+
+
+        <article class="bio__main">
+
+            <div class="bio__section">
+                <h2>НАЧАЛО</h2>
+
+                <p>
+
+                </p>
+
+                <p>
+
+                </p>
+
+            <div class="bio__media-wrapper">
+                <img 
+                src="../../assets/image/boxing/" 
+                alt="Тони Гразиано"
+                loading="lazy"
+                >
+            </div>
+
+                <p>
+
+                </p>
+            </div>
+
+
+            <div class="bio__section">
+                <h2></h2>
+
+                <p></p>
+                <p></p>
+
+            <div class="bio__media-wrapper--img">
+                <img 
+                src="../../assets/image/boxing/kuznetsov/harisss.webp" 
+                alt="Тони Гразиано"
+                width="1500"
+                height="1500">
+            </div>
+
+            <p></p>
+            <p></p>
+
+             <div class="bio__media-wrapper">
+                <img src="../../assets/image/boxing/kuznetsov/win.webp" alt="Тони Гразиано">
+            </div>
+            </div>
+
+
+            <div class="bio__section">
+                <h2></h2>
+
+                <p></p>
+
+            <div class="bio__media-wrapper">
+                <img src="../../assets/image/boxing/kuznetsov/tronsky-kuznetsov.webp" alt="Иван Кузнецов">
+            </div>
+
+            <p></p>
+
+            </div>
+
+
+            <div class="bio__section">
+                <h2></h2>
+
+                <p></p>
+
+             <div class="bio__media-wrapper">
+                <img 
+                src="../../assets/image/boxing/kuznetsov/kuz-belts-rev-2 1.webp" 
+                alt="Тони Гразиано"
+                loading="lazy"
+                >
+            </div>
+
+                <p>
+                    <strong></strong>
+                </p>
+
+            <div class="bio__media-wrapper">
+                <img 
+                src="../../assets/image/boxing/kuznetsov/t-legend-inro.webp" 
+                alt="Тони Гразиано"
+                loading="lazy"
+                >
+            </div>
+            </div>
+
+
+
+            <div class="bio__section">
+                <h2></h2>
+                
+
+                    <div class="bio__media-wrapper--legend">
+                        <img
+                            src="../../assets/image/boxing/kuznetsov/the-ring.webp"
+                            alt="Обложка журнала"
+                            width="1500"
+                            height="1500"
+                        >
+                    </div>
+            </div>
+
+            <div class="bio__section">
+            <div class="bio__media-wrapper">
+                <img 
+                src="../../assets/image/boxing/kuznetsov/feace-off.webp" 
+                alt="Иван Кузнецов"
+                loading="lazy"
+                >
+            </div>
+
+                <h2></h2>
+
+
+            </div>
+
+
+            <div class="bio__section">
+                <h2>NO SECONDS</h2>
+
+
+
+            </div>
+
+
+            <div class="bio__section">
+                <h2>ONE CROWN</h2>
+
+
+            <div class="bio__media-wrapper--img">
+                <img 
+                src="../../assets/image/boxing/kuznetsov/onecrown.webp" 
+                width="1500" 
+                height="1500" 
+                alt="Иван Кузнецов"
+                loading="lazy"
+                >
+            </div>
+
+            </div>
+
+
+            <div class="bio__section">
+                <h2>ИВАН И ИЛЬЯ</h2>
+
+
+            <div class="bio__media-wrapper">
+                <img 
+                src="../../assets/image/boxing/kuznetsov/faceof program.webp" 
+                alt="Иван Кузнецов"
+                loading="lazy"
+                >
+            </div>
+            </div>
+
+
+
+            <div class="bio__section">
+                <h2>ЗАВЕРШЕНИЕ</h2>
+            </div>
+        </article>
+    </div>
+        <article class="bio__quote-card">
+                <div class="bio__quote-avatar">
+                    <img 
+                    src="../../assets/image/boxing/kuznetsov/tronsky.webp" 
+                    alt="Александр Троцкий" 
+                    width="100" 
+                    height="100"
+                    loading="lazy"
+                    >
+                </div>
+
+                <div class="bio__quote-content">
+                                    <blockquote>
+                                        <i>
+                                            «Иван Кузнецов был тем бойцом, который мог превратить техничный поединок в войну — и всё равно остаться человеком, который лучше всех понимал, что происходит.»
+                                        </i>
+                                        <p> - Александр Троцкий</p>
+                                    </blockquote>
+                </div>
+            </article>     
+</section>
+    </main>
+    
+</body>
+</html>

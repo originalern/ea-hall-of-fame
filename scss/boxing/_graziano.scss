@@ -1,0 +1,58 @@
+@use "../base/variables" as *;
+
+@use "../athlete/athlete-header";
+@use "../athlete/heritage";
+@use "../athlete/review";
+@use "../athlete/analytics";
+@use "../athlete/bio";
+
+.graziano-meta {
+    margin-top: 10px;
+    font-family: $font-stat;
+    font-size: clamp(0.8rem, 2vw, 1.25rem);
+    letter-spacing: 0.12em;
+    text-align: center;
+}
+
+.athlete-stats__note {
+    grid-column: 1 / -1;
+    font-family: $font-text;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.bio__media-wrapper--contain img {
+    object-fit: contain;
+}
+
+.bio__media-wrapper--intro::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        to top,
+        #0e0e0e 0%,
+        rgba(14, 14, 14, 0.72) 18%,
+        rgba(14, 14, 14, 0.18) 48%,
+        transparent 72%
+    );
+}
+
+.bio__media-wrapper--poster {
+    width: min(100%, 1200px);
+    height: auto;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+.bio__media-wrapper--poster img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.team--graziano .team__list {
+    flex-wrap: wrap;
+}

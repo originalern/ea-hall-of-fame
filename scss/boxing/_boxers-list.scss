@@ -1,5 +1,16 @@
 @use "../base/variables" as *; 
 
+.legends__card--placeholder {
+    min-height: 280px;
+    background: radial-gradient(ellipse at 50% 30%, #6b5630 0%, #26221b 55%, #111 100%);
+}
+
+@media (min-width: 1200px) {
+    .legends__card--placeholder {
+        min-height: 420px;
+    }
+}
+
     .hero__container {
 
         h2 {
