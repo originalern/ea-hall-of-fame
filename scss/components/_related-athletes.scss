@@ -1,0 +1,60 @@
+.related-athletes {
+    margin-top: clamp(72px, 10vw, 140px);
+    margin-bottom: clamp(96px, 14vw, 180px);
+
+    > .section__title {
+        margin-bottom: clamp(24px, 4vw, 42px);
+    }
+}
+
+.related-athletes__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+    gap: clamp(16px, 3vw, 30px);
+    max-width: 850px;
+}
+
+.related-athlete-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: #f4efe5;
+    text-align: center;
+    text-decoration: none;
+
+    img {
+        display: block;
+        width: clamp(76px, 11vw, 120px);
+        aspect-ratio: 1;
+        border: 1px solid rgba(198, 168, 106, 0.42);
+        border-radius: 50%;
+        object-fit: cover;
+        transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    span {
+        font-size: clamp(0.85rem, 1.4vw, 1rem);
+        line-height: 1.25;
+    }
+
+    &:hover img,
+    &:focus-visible img {
+        border-color: #c6a86a;
+        transform: translateY(-3px);
+    }
+
+    &:focus-visible {
+        outline: 2px solid #c6a86a;
+        outline-offset: 5px;
+        border-radius: 8px;
+    }
+}
+
+.bio__lead {
+    margin-bottom: clamp(24px, 4vw, 44px);
+
+    > p:first-child {
+        color: rgba(244, 239, 229, 0.76);
+    }
+}

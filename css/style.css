@@ -2210,7 +2210,7 @@ main {
   }
   .football-athlete .overview__list {
     gap: 50px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
   .football-athlete .overview__item {
     min-width: 120px;

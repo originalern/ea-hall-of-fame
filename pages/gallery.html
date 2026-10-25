@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея — Hall of Fame</title>
+    <script type="module" src="/js/main.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container container">
+            <a href="/index.html">
+                <img class="header-logo-image" src="/assets/image/header/logo.svg" alt="Hall of Fame" width="150" height="50">
+            </a>
+            <nav class="header__menu">
+                <div class="header__nav" aria-label="Открыть меню">
+                    <div class="line-1"></div><div class="line-2"></div><div class="line-3"></div>
+                </div>
+                <ul class="header__list">
+                    <li class="header__item"><a class="header-menu__link" href="/index.html">Главная</a></li>
+                        <li class="header__item"><a class="header-menu__link" href="/pages/gallery.html" aria-current="page">Галерея</a></li>
+                    <li class="header__item"><a class="header-menu__link" href="/pages/football/football-list.html">Футбол</a></li>
+                    <li class="header__item"><a class="header-menu__link" href="/pages/boxing/boxers-list.html">Бокс</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="gallery-page container">
+        <section class="gallery-intro" aria-labelledby="gallery-title">
+            <p class="gallery-eyebrow">HALL OF FAME · ARCHIVE</p>
+            <h1 id="gallery-title">Галерея</h1>
+            <p>Фотографии спортсменов и моменты их карьеры.</p>
+        </section>
+
+        <nav class="gallery-sections" aria-label="Фильтр фотографий">
+            <button type="button" class="is-active" data-gallery-filter="all" aria-pressed="true">Все</button>
+            <button type="button" data-gallery-filter="boxing" aria-pressed="false">Бокс</button>
+            <button type="button" data-gallery-filter="football" aria-pressed="false">Футбол</button>
+        </nav>
+
+        <p class="gallery-count" id="gallery-count" aria-live="polite"></p>
+        <div class="gallery-grid" id="gallery-grid"></div>
+        <p class="gallery-empty" id="gallery-empty" hidden>Пока фотографий нет. Добавь нужные изображения в папку <code>assets/image/gallery/</code>.</p>
+    </main>
+    <dialog class="gallery-lightbox" id="gallery-lightbox" aria-label="Просмотр фотографии">
+        <button class="gallery-lightbox__close" id="gallery-lightbox-close" type="button" aria-label="Закрыть фотографию">×</button>
+        <img id="gallery-lightbox-image" src="" alt="">
+    </dialog>
+</body>
+</html>

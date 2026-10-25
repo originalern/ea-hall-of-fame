@@ -1,0 +1,111 @@
+@use "../base/variables" as *;
+
+.overview__trophy-link {
+    display: inline-flex;
+    cursor: pointer;
+    transition: transform 180ms ease, filter 180ms ease;
+
+    img {
+        cursor: pointer;
+    }
+
+    &:hover,
+    &:focus-visible {
+        transform: translateY(-4px) scale(1.04);
+        filter: drop-shadow(0 8px 18px rgb(255 219 120 / 25%));
+    }
+}
+
+.trophy-detail-page {
+    background: $color-dark;
+    color: $color-light;
+}
+
+.trophy-detail {
+    position: relative;
+    display: grid;
+    min-height: calc(100vh - 150px);
+    place-items: center;
+    padding-block: 64px;
+
+    &__content {
+        display: flex;
+        width: min(100%, 760px);
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        text-align: center;
+
+        h1 {
+            margin: 0;
+            font-family: $font-head-title;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 400;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        img {
+            display: block;
+            width: min(100%, 440px);
+            height: 440px;
+            object-fit: contain;
+        }
+
+        p {
+            max-width: 640px;
+            margin: 0;
+            color: $color-text;
+            font-family: $font-text;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+    }
+
+    &__back {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .trophy-detail {
+        min-height: calc(100vh - 50px);
+        padding: 70px 20px 48px;
+
+        &__back {
+            position: fixed;
+            z-index: 5;
+            top: 62px;
+            left: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border: 1px solid rgb(255 255 255 / 22%);
+            border-radius: 999px;
+            background: rgb(14 14 14 / 90%);
+            color: $color-light;
+            font-family: $font-text;
+            font-size: .9rem;
+            text-decoration: none;
+            backdrop-filter: blur(8px);
+
+            &:active {
+                transform: scale(.97);
+            }
+        }
+
+        &__content {
+            gap: 20px;
+
+            img {
+                width: min(100%, 320px);
+                height: 320px;
+            }
+
+            p {
+                font-size: .9rem;
+            }
+        }
+    }
+}

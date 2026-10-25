@@ -5,3 +5,8 @@
 @use "../athlete/review";
 @use "../athlete/analytics";
 @use "../athlete/bio";
+
+.athlete-header__card--no-gradient::after,
+.review__media--no-gradient::after {
+    display: none;
+}

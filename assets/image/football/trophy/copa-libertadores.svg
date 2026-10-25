@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" role="img" aria-label="Кубок Либертадорес">
+  <defs><linearGradient id="gold" x2="0" y2="1"><stop stop-color="#fff0a6"/><stop offset=".48" stop-color="#d5a83d"/><stop offset="1" stop-color="#80531b"/></linearGradient></defs>
+  <path fill="url(#gold)" d="M62 18h76l-7 68c-2 21-12 35-27 42v27h28v16H68v-16h28v-27c-15-7-25-21-27-42l-7-68Zm-22 15h19l4 42c2 15 8 26 18 34C53 107 39 89 36 64l-3-22h7Zm101 0h19l7 9-3 22c-3 25-17 43-45 45 10-8 16-19 18-34l4-42Zm-52 146h22v13H89v-13Z"/>
+  <path fill="none" stroke="#fff0a6" stroke-width="3" d="M78 28h44m-42 12h40m-38 12h36"/>
+</svg>
