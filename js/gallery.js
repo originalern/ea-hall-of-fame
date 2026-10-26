@@ -1,13 +1,5 @@
 const imageFiles = import.meta.glob([
-    "/assets/image/gallery/**/*.{webp,WEBP}",
-    "/assets/image/football/{smith,suleimanov,bruce,icnos,kuznetsov,berezovsky,blagoy,young,chato,facundo,van-hoorn}/**/*.webp",
-    "/assets/image/boxing/{andropov,mackinney,suleman,kuznetsov,campbell,graziano,caballero,ikuznetsov}/**/*.webp",
-    "/assets/image/football/chato/*.png",
-    "/assets/image/category-football/luis-chato.webp",
-    "/assets/image/football/facundo/**/*.webp",
-    "/assets/image/football/van-hoorn/**/*.webp",
-    "/assets/image/boxing/ikuznetsov/**/*.webp",
-    "/assets/image/boxing/caballero/**/*.webp",
+    "/assets/image/gallery/**/*.{webp,WEBP,jpg,JPG,jpeg,JPEG,png,PNG,avif,AVIF,gif,GIF}",
 ], {
     eager: true,
     query: "?url",
@@ -87,89 +79,8 @@ const categoryFor = (path) => {
     return "other";
 };
 
-const biographyCutouts = new Set([
-    "/assets/image/boxing/ikuznetsov/intro-bio.webp",
-    "/assets/image/boxing/ikuznetsov/the-killer-ilya.webp",
-    "/assets/image/boxing/ikuznetsov/end-sec-ilya.webp",
-    "/assets/image/boxing/ikuznetsov/ilya-stay-in-dark.webp",
-    "/assets/image/boxing/ikuznetsov/undisputed.webp",
-    "/assets/image/boxing/ikuznetsov/bio-end.webp",
-    "/assets/image/boxing/ikuznetsov/avatar.webp",
-    "/assets/image/boxing/ikuznetsov/atropometry.webp",
-    "/assets/image/boxing/ikuznetsov/refleksy.webp",
-    "/assets/image/boxing/caballero/trainer.webp",
-    "/assets/image/boxing/caballero/pc-reflex.webp",
-    "/assets/image/boxing/caballero/pc-antropometry.webp",
-]);
-
-const chatoGalleryImages = new Set([
-    "Уличная футбольная сцена во дворе (1).png",
-    "Спортивный портрет на трибуне.png",
-    "Властный футболист у ворот.png",
-    "Voetbalster Nummer 10 bij het Doel(1).png",
-    "call-to.png",
-    "Unknown-13.png",
-    "el-mago.png",
-    "team-uru.png",
-    "win.png",
-    "urog.png",
-    "Unknown-14.png",
-]);
-
-const excludedGalleryImages = new Set([
-    "/assets/image/football/smith/as-anropometry.webp",
-    "/assets/image/football/young/anropometry.webp",
-    "/assets/image/football/bruce/anropometry.webp",
-    "/assets/image/boxing/mackinney/am-avatar.webp",
-    "/assets/image/boxing/mackinney/am-antopometry.webp",
-    "/assets/image/boxing/andropov/avatar.webp",
-    "/assets/image/boxing/kuznetsov/avatar.webp",
-    "/assets/image/gallery/futbolist-s-goryashchey-gazetoy.webp",
-    "/assets/image/boxing/campbell/bc-who-stop-god.webp",
-    "/assets/image/gallery/portret-muzhchinh-v-bordovoy-sportivnoy-forme.webp",
-    "/assets/image/football/berezovsky/berezovsky-farewell.webp",
-    "/assets/image/gallery/portret-vratarya-na-stadione.webp",
-    "/assets/image/football/bruce/bm-bruce-anthropometry.webp",
-    "/assets/image/gallery/promo-poster-khollifild-i-tonieya.webp",
-    "/assets/image/boxing/caballero/retro-boksyor-v-industrialnom-zale.webp",
-    "/assets/image/football/berezovsky/roma.webp",
-    "/assets/image/boxing/kuznetsov/ik-antropometriya.webp",
-    "/assets/image/football/young/ry-anropometry-2.webp",
-    "/assets/image/gallery/bokserskoe-protivostoyanie-u-stola.webp",
-    "/assets/image/football/young/ry-mu.webp",
-    "/assets/image/football/young/ry-night-show.webp",
-    "/assets/image/boxing/graziano/boksyor-v-potyortom-kozhanom-shleme.webp",
-    "/assets/image/boxing/caballero/brutalnaya-duel-revansh-v-arene.webp",
-    "/assets/image/gallery/brutalnaya-duel-revansh-v-arene.webp",
-    "/assets/image/boxing/kuznetsov/ik-tronsky.webp",
-    "/assets/image/gallery/shakhmatnhy-poedinok-pod-sofitom.webp",
-    "/assets/image/gallery/sportsmenh-pered-kartinoy-s-kubkom.webp",
-    "/assets/image/gallery/chempion-boksa-s-poyasami-mira.webp",
-    "/assets/image/football/berezovsky/inri-world-cup.webp",
-    "/assets/image/boxing/caballero/intensywny-portret-muskularnego-mezczyzny.webp",
-    "/assets/image/football/berezovsky/interviwe.webp",
-    "/assets/image/gallery/studiynhy-portret-v-forme-barselonh.webp",
-    "/assets/image/gallery/chempion-v-dhmu-ringa.webp",
-    "/assets/image/boxing/kuznetsov/j-smith.webp",
-    "/assets/image/gallery/chempionskiy-portret-s-poyasami.webp",
-    "/assets/image/boxing/graziano/tg-antropometry.webp",
-    "/assets/image/gallery/dramatichnhy-portret-futbolista-v-razdevalke.webp",
-    "/assets/image/football/berezovsky/eb-antropometry.webp",
-    "/assets/image/boxing/suleman/tronsky.webp",
-    "/assets/image/boxing/caballero/legend.webp",
-    "/assets/image/gallery/chempionh-na-futbolnom-pole-3.webp",
-]);
-
 const photos = Object.entries(imageFiles)
-    .filter(([path]) => {
-        const filename = path.split("/").pop();
-        return !biographyCutouts.has(path)
-            && !excludedGalleryImages.has(path)
-            && path !== "/assets/image/category-football/andrey-vanhoorn.webp"
-            && (!path.includes("/assets/image/football/chato/") || chatoGalleryImages.has(filename));
-    })
     .map(([path, src]) => ({ path, src, name: readableName(path), category: categoryFor(path) }))
-    .filter((photo, index, items) => items.findIndex((candidate) => candidate.src === photo.src) === index)
     .sort((a, b) => a.name.localeCompare(b.name, "ru"));
 
 function renderGallery() {
