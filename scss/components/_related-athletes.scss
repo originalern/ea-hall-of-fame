@@ -1,9 +1,24 @@
+@use "../base/variables" as *;
+
 .related-athletes {
     margin-top: clamp(72px, 10vw, 140px);
     margin-bottom: clamp(96px, 14vw, 180px);
 
     > .section__title {
         margin-bottom: clamp(24px, 4vw, 42px);
+        font-family: $font-head-title;
+        font-size: clamp(2.5rem, 10vw, 4rem);
+        font-weight: 400;
+        letter-spacing: .12em;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+@media (min-width: 1200px) {
+    .related-athletes > .section__title {
+        font-size: clamp(5rem, 7vw, 8rem);
+        letter-spacing: .25em;
     }
 }
 

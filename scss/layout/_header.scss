@@ -77,6 +77,13 @@
   }
 }
 
+/* Shared compact logo size for mobile biography and athlete list pages. */
+.header-logo-image {
+  display: block;
+  width: 145px;
+  height: auto;
+}
+
 @media (min-width: 1200px) {
   .container {
     width: min(100% - 80px, 1400px);
@@ -119,5 +126,9 @@
         color: #c6a86a;
       }
     }
+  }
+
+  .header-logo-image {
+    width: 220px;
   }
 }

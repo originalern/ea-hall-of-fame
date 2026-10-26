@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 150" role="img" aria-labelledby="title">
+  <title id="title">Лучший игрок чемпионата Европы UEFA</title>
+  <defs>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7fbff"/>
+      <stop offset=".28" stop-color="#b9c5ce"/>
+      <stop offset=".52" stop-color="#f4f7f8"/>
+      <stop offset=".78" stop-color="#87949e"/>
+      <stop offset="1" stop-color="#e5ebef"/>
+    </linearGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dce3e8"/>
+      <stop offset="1" stop-color="#65717a"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#silver)" d="M60 9c-16 0-26 12-25 29l4 45c1 13 7 23 15 30l-3 15H35v8h50v-8H69l-3-15c8-7 14-17 15-30l4-45C86 21 76 9 60 9Zm0 8c10 0 16 8 15 20l-4 45c-1 13-5 20-11 26-6-6-10-13-11-26l-4-45c-1-12 5-20 15-20Z"/>
+  <path fill="#56636d" opacity=".75" d="M46 55h28l-1 10H47z"/>
+  <path fill="#f7fbff" opacity=".8" d="M49 57h22v2H49zm1 4h20v1H50z"/>
+  <path fill="url(#base)" d="M31 133h58v11H31z"/>
+  <path fill="#f7fbff" opacity=".55" d="M36 136h48v2H36z"/>
+</svg>

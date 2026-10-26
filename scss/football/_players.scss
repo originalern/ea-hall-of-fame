@@ -500,6 +500,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 28px;
     }
 
     &__visual {
@@ -1308,6 +1309,12 @@
     gap: clamp(40px, 5vw, 80px);
 }
 
+.football-player-page .bio__section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .football-player-page .bio__main {
     gap: clamp(40px, 5vw, 80px);
 }
@@ -1534,4 +1541,13 @@
 
 .career-record__grid--horizontal > .career-record__panel:last-child {
     grid-column: auto;
+}
+
+@media (max-width: 767px) {
+    .suleimanov-page .career-record__grid--horizontal {
+        display: flex;
+        flex-direction: column;
+        overflow-x: visible;
+        padding-bottom: 0;
+    }
 }

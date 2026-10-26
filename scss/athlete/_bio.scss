@@ -17,6 +17,24 @@
     gap: 30px;
     margin-top: 80px;
     padding-inline: 20px;
+
+    &__media-wrapper {
+        position: relative;
+        isolation: isolate;
+
+        &::after {
+            position: absolute;
+            z-index: 1;
+            inset: 55% 0 0;
+            background: linear-gradient(to bottom, transparent, rgba(14, 14, 14, .78) 75%, #0e0e0e);
+            content: "";
+            pointer-events: none;
+        }
+
+        img {
+            display: block;
+        }
+    }
     
 &__media-wrapper--facetoface {
     width: 100%;
@@ -130,7 +148,7 @@
         display: flex;
         flex-direction: column;
 
-        gap: 16px;
+        gap: 12px;
 
         width: 100%;
 

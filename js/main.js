@@ -108,6 +108,35 @@ if (document.querySelector("#gallery-grid")) {
     import("./gallery.js");
 }
 
+const biographyGallery = document.querySelector(".bio-photo-gallery .gallery-grid");
+if (biographyGallery) {
+    const lightbox = document.createElement("dialog");
+    lightbox.className = "gallery-lightbox";
+    lightbox.setAttribute("aria-label", "Просмотр фотографии");
+    lightbox.innerHTML = '<button class="gallery-lightbox__close" type="button" aria-label="Закрыть фотографию">×</button><img alt="">';
+    document.body.append(lightbox);
+
+    const lightboxImage = lightbox.querySelector("img");
+    const lightboxClose = lightbox.querySelector("button");
+
+    biographyGallery.addEventListener("click", (event) => {
+        const card = event.target.closest("a.gallery-card");
+        if (!card) return;
+
+        event.preventDefault();
+        const image = card.querySelector("img");
+        lightboxImage.src = image?.currentSrc || image?.src || card.href;
+        lightboxImage.alt = image?.alt || "Фотография спортсмена";
+        lightbox.showModal();
+        lightboxClose.focus();
+    });
+
+    lightboxClose.addEventListener("click", () => lightbox.close());
+    lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) lightbox.close();
+    });
+}
+
 let slideIndex = 1;
 
 showSlides(slideIndex);
