@@ -1,10 +1,13 @@
 const imageFiles = import.meta.glob([
     "/assets/image/gallery/**/*.{webp,WEBP}",
+    "/assets/image/football/{smith,suleimanov,bruce,icnos,kuznetsov,berezovsky,blagoy,young,chato,facundo,van-hoorn}/**/*.webp",
+    "/assets/image/boxing/{andropov,mackinney,suleman,kuznetsov,campbell,graziano,caballero,ikuznetsov}/**/*.webp",
+    "/assets/image/football/chato/*.png",
+    "/assets/image/category-football/luis-chato.webp",
     "/assets/image/football/facundo/**/*.webp",
     "/assets/image/football/van-hoorn/**/*.webp",
     "/assets/image/boxing/ikuznetsov/**/*.webp",
     "/assets/image/boxing/caballero/**/*.webp",
-    "/assets/image/category-football/andrey-vanhoorn.webp",
 ], {
     eager: true,
     query: "?url",
@@ -75,7 +78,7 @@ const footballOverrides = [
 ];
 
 const categoryFor = (path) => {
-    if (path.includes("/assets/image/football/") || path.includes("/assets/image/category-football/andrey-vanhoorn")) return "football";
+    if (path.includes("/assets/image/football/") || path.endsWith("/assets/image/category-football/luis-chato.webp")) return "football";
     if (path.includes("/assets/image/boxing/ikuznetsov/") || path.includes("/assets/image/boxing/caballero/")) return "boxing";
     const name = path.split("/").pop().replace(/\.[^.]+$/, "").normalize("NFC");
     if (footballOverrides.includes(name)) return "football";
@@ -99,9 +102,34 @@ const biographyCutouts = new Set([
     "/assets/image/boxing/caballero/pc-antropometry.webp",
 ]);
 
+const chatoGalleryImages = new Set([
+    "Уличная футбольная сцена во дворе (1).png",
+    "Спортивный портрет на трибуне.png",
+    "Властный футболист у ворот.png",
+    "Voetbalster Nummer 10 bij het Doel(1).png",
+    "call-to.png",
+    "Unknown-13.png",
+    "el-mago.png",
+    "team-uru.png",
+    "win.png",
+    "urog.png",
+    "Unknown-14.png",
+]);
+
+const excludedGalleryImages = new Set([
+    "/assets/image/gallery/chempionh-na-futbolnom-pole-3.webp",
+]);
+
 const photos = Object.entries(imageFiles)
-    .filter(([path]) => !biographyCutouts.has(path))
+    .filter(([path]) => {
+        const filename = path.split("/").pop();
+        return !biographyCutouts.has(path)
+            && !excludedGalleryImages.has(path)
+            && path !== "/assets/image/category-football/andrey-vanhoorn.webp"
+            && (!path.includes("/assets/image/football/chato/") || chatoGalleryImages.has(filename));
+    })
     .map(([path, src]) => ({ path, src, name: readableName(path), category: categoryFor(path) }))
+    .filter((photo, index, items) => items.findIndex((candidate) => candidate.src === photo.src) === index)
     .sort((a, b) => a.name.localeCompare(b.name, "ru"));
 
 function renderGallery() {
