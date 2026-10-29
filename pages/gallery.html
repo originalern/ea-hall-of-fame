@@ -41,11 +41,12 @@
 
         <p class="gallery-count" id="gallery-count" aria-live="polite"></p>
         <div class="gallery-grid" id="gallery-grid"></div>
-        <p class="gallery-empty" id="gallery-empty" hidden>Пока фотографий нет. Добавь нужные изображения в папку <code>assets/image/gallery/</code>.</p>
+        <p class="gallery-empty" id="gallery-empty" hidden>Пока материалов нет. Добавь изображения или видео в папку <code>assets/image/gallery/</code>.</p>
     </main>
-    <dialog class="gallery-lightbox" id="gallery-lightbox" aria-label="Просмотр фотографии">
-        <button class="gallery-lightbox__close" id="gallery-lightbox-close" type="button" aria-label="Закрыть фотографию">×</button>
+    <dialog class="gallery-lightbox" id="gallery-lightbox" aria-label="Просмотр фотографии или видео">
+        <button class="gallery-lightbox__close" id="gallery-lightbox-close" type="button" aria-label="Закрыть просмотр">×</button>
         <img id="gallery-lightbox-image" src="" alt="">
+        <video id="gallery-lightbox-video" controls playsinline hidden></video>
     </dialog>
 </body>
 </html>

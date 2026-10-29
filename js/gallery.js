@@ -1,6 +1,12 @@
 const imageFiles = import.meta.glob([
     "/assets/image/gallery/**/*.{webp,WEBP,jpg,JPG,jpeg,JPEG,png,PNG,avif,AVIF,gif,GIF}",
+    "/assets/image/football/facundo/*.{webp,WEBP,jpg,JPG,jpeg,JPEG,png,PNG,avif,AVIF,gif,GIF}",
 ], {
+    eager: true,
+    query: "?url",
+    import: "default"
+});
+const videoFiles = import.meta.glob("/assets/image/gallery/**/*.{mp4,MP4,webm,WEBM,mov,MOV}", {
     eager: true,
     query: "?url",
     import: "default"
@@ -12,6 +18,7 @@ const filterButtons = [...document.querySelectorAll("[data-gallery-filter]")];
 const empty = document.querySelector("#gallery-empty");
 const lightbox = document.querySelector("#gallery-lightbox");
 const lightboxImage = document.querySelector("#gallery-lightbox-image");
+const lightboxVideo = document.querySelector("#gallery-lightbox-video");
 const lightboxClose = document.querySelector("#gallery-lightbox-close");
 
 const readableName = (path) => {
@@ -19,7 +26,7 @@ const readableName = (path) => {
     return filename
         .replace(/[_-]+/g, " ")
         .replace(/\s+/g, " ")
-        .replace(/\b(webp|png|jpg|jpeg|avif|gif)\b/gi, "")
+        .replace(/\b(webp|png|jpg|jpeg|avif|gif|mp4|webm|mov)\b/gi, "")
         .trim();
 };
 
@@ -79,38 +86,57 @@ const categoryFor = (path) => {
     return "other";
 };
 
-const photos = Object.entries(imageFiles)
-    .map(([path, src]) => ({ path, src, name: readableName(path), category: categoryFor(path) }))
+const media = [
+    ...Object.entries(imageFiles).map(([path, src]) => ({ path, src, type: "image" })),
+    ...Object.entries(videoFiles).map(([path, src]) => ({ path, src, type: "video" }))
+].map((item) => ({ ...item, name: readableName(item.path), category: categoryFor(item.path) }))
     .sort((a, b) => a.name.localeCompare(b.name, "ru"));
 
 function renderGallery() {
     gallery.replaceChildren();
 
-    photos.forEach((photo) => {
+    media.forEach((item) => {
         const card = document.createElement("a");
         card.className = "gallery-card";
-        card.href = photo.src;
-        card.setAttribute("aria-label", `Открыть фотографию: ${photo.name}`);
+        card.href = item.src;
+        card.setAttribute("aria-label", `Открыть ${item.type === "video" ? "видео" : "фотографию"}: ${item.name}`);
         card.addEventListener("click", (event) => {
             event.preventDefault();
-            lightboxImage.src = photo.src;
-            lightboxImage.alt = photo.name || "fotografiya-hall-of-fame";
+            lightboxVideo.pause();
+            lightboxVideo.removeAttribute("src");
+            lightboxVideo.hidden = item.type !== "video";
+            lightboxImage.hidden = item.type !== "image";
+            if (item.type === "video") {
+                lightboxVideo.src = item.src;
+                lightboxVideo.load();
+                lightboxVideo.play().catch(() => {});
+            } else {
+                lightboxImage.src = item.src;
+                lightboxImage.alt = item.name || "fotografiya-hall-of-fame";
+            }
             lightbox.showModal();
             lightboxClose.focus();
         });
 
-        const image = document.createElement("img");
-        image.src = photo.src;
-        image.alt = photo.name || "fotografiya-hall-of-fame";
-        image.loading = "lazy";
-        image.decoding = "async";
-        card.append(image);
-        card.dataset.category = photo.category;
+        const preview = document.createElement(item.type === "video" ? "video" : "img");
+        preview.src = item.src;
+        if (item.type === "video") {
+            preview.muted = true;
+            preview.playsInline = true;
+            preview.preload = "metadata";
+            preview.setAttribute("aria-label", item.name || "Видео из галереи");
+        } else {
+            preview.alt = item.name || "fotografiya-hall-of-fame";
+            preview.loading = "lazy";
+            preview.decoding = "async";
+        }
+        card.append(preview);
+        card.dataset.category = item.category;
         gallery.append(card);
     });
 
-    count.textContent = `Фотографий: ${photos.length}`;
-    empty.hidden = photos.length > 0;
+    count.textContent = `Материалов: ${media.length}`;
+    empty.hidden = media.length > 0;
 }
 
 filterButtons.forEach((button) => {
@@ -129,13 +155,17 @@ filterButtons.forEach((button) => {
             card.hidden = selectedFilter !== "all" && card.dataset.category !== selectedFilter;
         });
         const visibleCount = selectedFilter === "all"
-            ? photos.length
-            : photos.filter((photo) => photo.category === selectedFilter).length;
-        count.textContent = `Фотографий: ${visibleCount}`;
+            ? media.length
+            : media.filter((item) => item.category === selectedFilter).length;
+        count.textContent = `Материалов: ${visibleCount}`;
     });
 });
 
 lightboxClose.addEventListener("click", () => lightbox.close());
+lightbox.addEventListener("close", () => {
+    lightboxVideo.pause();
+    lightboxVideo.removeAttribute("src");
+});
 lightbox.addEventListener("click", (event) => {
     if (event.target === lightbox) lightbox.close();
 });

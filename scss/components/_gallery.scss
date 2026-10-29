@@ -136,7 +136,8 @@
     border-radius: 12px;
     background: #191919;
 
-    img {
+    img,
+    video {
         display: block;
         width: 100%;
         height: auto;
@@ -144,7 +145,9 @@
     }
 
     &:hover img,
-    &:focus-visible img {
+    &:hover video,
+    &:focus-visible img,
+    &:focus-visible video {
         transform: scale(1.035);
     }
 
@@ -202,7 +205,8 @@
         backdrop-filter: blur(5px);
     }
 
-    img {
+    img,
+    video {
         display: block;
         max-width: 96vw;
         max-height: 92vh;
