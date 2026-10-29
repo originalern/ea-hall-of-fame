@@ -86,11 +86,29 @@ const categoryFor = (path) => {
     return "other";
 };
 
+const newestFirst = [
+    "/assets/image/football/facundo/facundo-eat.webp",
+    "/assets/image/football/facundo/f-pizza.webp",
+    "/assets/image/football/facundo/facundo-fastfood.webp",
+    "/assets/image/football/facundo/facundo-s.webp",
+    "/assets/image/football/facundo/facundo.webp",
+    "/assets/image/gallery/facundo.MP4"
+];
+
 const media = [
     ...Object.entries(imageFiles).map(([path, src]) => ({ path, src, type: "image" })),
     ...Object.entries(videoFiles).map(([path, src]) => ({ path, src, type: "video" }))
 ].map((item) => ({ ...item, name: readableName(item.path), category: categoryFor(item.path) }))
-    .sort((a, b) => a.name.localeCompare(b.name, "ru"));
+    .sort((a, b) => {
+        const aRank = newestFirst.indexOf(a.path);
+        const bRank = newestFirst.indexOf(b.path);
+        if (aRank !== -1 || bRank !== -1) {
+            if (aRank === -1) return 1;
+            if (bRank === -1) return -1;
+            return aRank - bRank;
+        }
+        return a.name.localeCompare(b.name, "ru");
+    });
 
 function renderGallery() {
     gallery.replaceChildren();
@@ -107,6 +125,7 @@ function renderGallery() {
             lightboxVideo.hidden = item.type !== "video";
             lightboxImage.hidden = item.type !== "image";
             if (item.type === "video") {
+                lightboxVideo.muted = true;
                 lightboxVideo.src = item.src;
                 lightboxVideo.load();
                 lightboxVideo.play().catch(() => {});
@@ -121,10 +140,16 @@ function renderGallery() {
         const preview = document.createElement(item.type === "video" ? "video" : "img");
         preview.src = item.src;
         if (item.type === "video") {
+            preview.autoplay = true;
             preview.muted = true;
             preview.playsInline = true;
+            preview.loop = true;
             preview.preload = "metadata";
+            preview.setAttribute("autoplay", "");
+            preview.setAttribute("muted", "");
+            preview.setAttribute("playsinline", "");
             preview.setAttribute("aria-label", item.name || "Видео из галереи");
+            preview.play().catch(() => {});
         } else {
             preview.alt = item.name || "fotografiya-hall-of-fame";
             preview.loading = "lazy";
